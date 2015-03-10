@@ -33,18 +33,29 @@
     [skinItem colorItemWithOriginColor:[UIColor whiteColor] withCompletionBlock:^(PDMColorItem *foundItem) {
         XCTAssertNotNil(foundItem);
     }];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 }
 
 - (void)testColorBinarySearch {
     PDMSkinItem *skinItem = [[PDMSkinItem alloc] init];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
     [skinItem loadStyleSheetFromPlist:plistPath];
-    [skinItem colorItemWithOriginColor:[UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.0]
+    [skinItem colorItemWithOriginColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]
                    withCompletionBlock:^(PDMColorItem *foundItem) {
         XCTAssertNotNil(foundItem);
     }];
-    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+}
+
+- (void)testNotATargetColorBinarySearch {
+    PDMSkinItem *skinItem = [[PDMSkinItem alloc] init];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
+    [skinItem loadStyleSheetFromPlist:plistPath];
+    [skinItem colorItemWithOriginColor:[UIColor colorWithRed:0.94 green:0.94 blue:0.99 alpha:1.0]
+                   withCompletionBlock:^(PDMColorItem *foundItem) {
+                       XCTAssertNil(foundItem);
+                   }];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 }
 
 @end

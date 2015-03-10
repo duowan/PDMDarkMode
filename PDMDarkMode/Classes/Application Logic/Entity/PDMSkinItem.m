@@ -69,10 +69,10 @@
                  NSUInteger currentOffset = (NSUInteger)labs(obj1.originalColorHash - obj2.originalColorHash);
                  CGFloat availabelOffset = MAX(obj1.availabelOffset, obj2.availabelOffset);
                  if (availabelOffset > 0.001 &&
-                     currentOffset / pow(kPDMColorDegreeOfAccuracy, 4) < availabelOffset &&
-                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 3) - (NSInteger)currentOffset / pow(kPDMColorDegreeOfAccuracy, 3)) < availabelOffset &&
-                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 2) - (NSInteger)currentOffset / pow(kPDMColorDegreeOfAccuracy, 2)) < availabelOffset &&
-                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 1) - (NSInteger)currentOffset / pow(kPDMColorDegreeOfAccuracy, 1)) < availabelOffset) {
+                     currentOffset / pow(kPDMColorDegreeOfAccuracy, 4) <= availabelOffset &&
+                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 3) - (NSInteger)(currentOffset / pow(kPDMColorDegreeOfAccuracy, 3))) <= availabelOffset &&
+                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 2) - (NSInteger)(currentOffset / pow(kPDMColorDegreeOfAccuracy, 2))) <= availabelOffset &&
+                     (currentOffset / pow(kPDMColorDegreeOfAccuracy, 1) - (NSInteger)(currentOffset / pow(kPDMColorDegreeOfAccuracy, 1))) <= availabelOffset) {
                      return NSOrderedSame;
                  }
                  else if (obj1.originalColorHash == obj2.originalColorHash){
@@ -82,7 +82,12 @@
                      return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedAscending : NSOrderedDescending;
                  }
             }];
-            if (colorItemIndex < [self.colorItems.array count]) {
+            if (colorItemIndex == NSNotFound || colorItemIndex >= [self.colorItems.array count]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completionBlock(nil);
+                });
+            }
+            else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     completionBlock(self.colorItems.array[colorItemIndex]);
                 });
