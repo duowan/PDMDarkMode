@@ -22,6 +22,7 @@
                     self.textColor = foundItem.replacingColor;
                 }
             }];
+            [self setObject:textColor forRestoreKey:@"textColor"];
         }
         else {
             UIColor *textColor = value;
@@ -39,7 +40,12 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    self.attributedText = self.pdm_restoreData[@"attributedText"];
+    if (self.pdm_restoreData[@"textColor"] != nil) {
+        self.textColor = self.pdm_restoreData[@"textColor"];
+    }
+    else {
+        self.attributedText = self.pdm_restoreData[@"attributedText"];
+    }
 }
 
 @end
