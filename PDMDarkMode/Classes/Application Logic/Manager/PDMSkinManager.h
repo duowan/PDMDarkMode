@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "PDMSkinItem.h"
 
 @interface PDMSkinManager : NSObject
 
 - (void)addItem:(PDMSkinItem *)item;
+
+- (void)applyWithViewController:(UIViewController *)viewController;
+
+- (void)applyWithView:(UIView *)view isRecursive:(BOOL)isRecursive;
 
 @end

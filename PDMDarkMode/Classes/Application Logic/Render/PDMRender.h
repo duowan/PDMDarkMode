@@ -9,20 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class PDMSkinManager;
+@class PDMSkinItem;
 
 @interface PDMRender : NSObject
 
-- (instancetype)initWithManager:(PDMSkinManager *)manager;
-
-/**
- *  渲染指定View
- */
-- (void)rendWithView:(UIView *)view;
-
-/**
- *  递归渲染指定View以及该View下的所有subView
- */
-- (void)recursiveRendWithView:(UIView *)view;
+- (void)rendWithSkinItem:(PDMSkinItem *)skinItem forView:(UIView *)view;
 
 @end

@@ -8,29 +8,25 @@
 
 #import "PDMRender.h"
 #import "PDMSkinManager.h"
+#import "PDMColorItem.h"
 
 @interface PDMRender ()
-
-@property (nonatomic, strong) PDMSkinManager *manager;
 
 @end
 
 @implementation PDMRender
 
-- (instancetype)initWithManager:(PDMSkinManager *)manager {
-    self = [super init];
-    if (self) {
-        _manager = manager;
+- (void)rendWithSkinItem:(PDMSkinItem *)skinItem forView:(UIView *)view {
+    {
+        UIColor *backgroundColor = view.backgroundColor;
+        if (backgroundColor != nil) {
+            [skinItem colorItemWithOriginColor:backgroundColor withCompletionBlock:^(PDMColorItem *foundItem) {
+                if (foundItem != nil) {
+                    view.backgroundColor = foundItem.replacingColor;
+                }
+            }];
+        }
     }
-    return self;
-}
-
-- (void)rendWithView:(UIView *)view {
-    
-}
-
-- (void)recursiveRendWithView:(UIView *)view {
-    
 }
 
 @end

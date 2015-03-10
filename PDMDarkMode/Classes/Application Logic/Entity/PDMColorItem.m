@@ -26,10 +26,10 @@
         a-=0.01;
     }
     NSUInteger hashCode = 0;
-    hashCode += r * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy;
-    hashCode += g * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy;
-    hashCode += b * kPDMColorDegreeOfAccuracy * kPDMColorDegreeOfAccuracy;
-    hashCode += a * kPDMColorDegreeOfAccuracy;
+    hashCode += (NSUInteger)(r * kPDMColorDegreeOfAccuracy) * pow(kPDMColorDegreeOfAccuracy, 3);
+    hashCode += (NSUInteger)(g * kPDMColorDegreeOfAccuracy) * pow(kPDMColorDegreeOfAccuracy, 2);
+    hashCode += (NSUInteger)(b * kPDMColorDegreeOfAccuracy) * pow(kPDMColorDegreeOfAccuracy, 1);
+    hashCode += (NSUInteger)(a * kPDMColorDegreeOfAccuracy) * pow(kPDMColorDegreeOfAccuracy, 0);
     return hashCode;
 }
 

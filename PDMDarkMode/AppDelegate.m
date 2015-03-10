@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PDMApplication.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self configureStyleSheet];
     return YES;
 }
 
@@ -40,6 +41,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)configureStyleSheet {
+    PDMSkinItem *demoSkin = [[PDMSkinItem alloc] init];
+    NSString *plistFilePath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
+    [demoSkin loadStyleSheetFromPlist:plistFilePath];
+    [[[PDMApplication sharedApplication] defaultManager] addItem:demoSkin];
 }
 
 @end

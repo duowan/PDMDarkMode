@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PDMApplication.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
