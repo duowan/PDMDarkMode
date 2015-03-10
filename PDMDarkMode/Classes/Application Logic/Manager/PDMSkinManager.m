@@ -83,4 +83,17 @@
     }
 }
 
+- (void)restoreWithViewController:(UIViewController *)viewController {
+    [self restoreWithView:viewController.view isRecursive:YES];
+}
+
+- (void)restoreWithView:(UIView *)view isRecursive:(BOOL)isRecursive {
+    [self.render restoreWithView:view];
+    if (isRecursive) {
+        [[view subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self restoreWithView:obj isRecursive:isRecursive];
+        }];
+    }
+}
+
 @end

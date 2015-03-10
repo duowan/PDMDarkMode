@@ -18,4 +18,8 @@
 
 - (void)applyWithView:(UIView *)view isRecursive:(BOOL)isRecursive;
 
+- (void)restoreWithViewController:(UIViewController *)viewController;
+
+- (void)restoreWithView:(UIView *)view isRecursive:(BOOL)isRecursive;
+
 @end

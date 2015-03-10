@@ -68,7 +68,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PDMDarkMode" id="6AD-wI-HGT">
-                        <barButtonItem key="rightBarButtonItem" title="Switch" id="Jow-LE-Aa3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Switch" id="Jow-LE-Aa3">
+                            <connections>
+                                <action selector="handleSwitchButtonTapped:" destination="vXZ-lx-hvc" id="sCv-oY-aKC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

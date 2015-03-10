@@ -15,4 +15,6 @@
 
 - (void)rendWithSkinItem:(PDMSkinItem *)skinItem forView:(UIView *)view;
 
+- (void)restoreWithView:(UIView *)view;
+
 @end

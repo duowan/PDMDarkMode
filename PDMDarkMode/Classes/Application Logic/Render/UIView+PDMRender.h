@@ -12,6 +12,12 @@
 
 @interface UIView (PDMRender)
 
+@property (nonatomic, copy) NSDictionary *pdm_restoreData;
+
 - (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem;
+
+- (void)pdm_restore;
+
+- (void)setObject:(id)object forRestoreKey:(NSString *)restoreKey;
 
 @end

@@ -21,4 +21,8 @@
     [view pdm_rendWithSkinItem:skinItem];
 }
 
+- (void)restoreWithView:(UIView *)view {
+    [view pdm_restore];
+}
+
 @end

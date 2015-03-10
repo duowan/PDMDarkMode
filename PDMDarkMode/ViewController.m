@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "PDMApplication.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    BOOL isOn;
+}
 
 @end
 
@@ -17,13 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)handleSwitchButtonTapped:(id)sender {
+    if (!isOn) {
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+    }
+    else {
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
+    }
+    isOn = !isOn;
 }
 
 @end

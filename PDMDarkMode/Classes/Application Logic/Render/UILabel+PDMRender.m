@@ -34,6 +34,12 @@
             }];
         }
     }];
+    [self setObject:attributedText forRestoreKey:@"attributedText"];
+}
+
+- (void)pdm_restore {
+    [super pdm_restore];
+    self.attributedText = self.pdm_restoreData[@"attributedText"];
 }
 
 @end
