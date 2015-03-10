@@ -9,6 +9,7 @@
 #import "PDMRender.h"
 #import "PDMSkinManager.h"
 #import "PDMColorItem.h"
+#import "UIView+PDMRender.h"
 
 @interface PDMRender ()
 
@@ -17,16 +18,7 @@
 @implementation PDMRender
 
 - (void)rendWithSkinItem:(PDMSkinItem *)skinItem forView:(UIView *)view {
-    {
-        UIColor *backgroundColor = view.backgroundColor;
-        if (backgroundColor != nil) {
-            [skinItem colorItemWithOriginColor:backgroundColor withCompletionBlock:^(PDMColorItem *foundItem) {
-                if (foundItem != nil) {
-                    view.backgroundColor = foundItem.replacingColor;
-                }
-            }];
-        }
-    }
+    [view pdm_rendWithSkinItem:skinItem];
 }
 
 @end

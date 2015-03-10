@@ -4,5 +4,9 @@
 <dict>
 	<key>255,255,255,1.0,5[纯白色]</key>
 	<string>0,0,0[纯黑色]</string>
+	<key>30,30,30[灰色]</key>
+	<string>255,255,255[纯白色]</string>
+	<key>0,0,0[纯黑色]</key>
+	<string>255,255,255[纯白色]</string>
 </dict>
 </plist>

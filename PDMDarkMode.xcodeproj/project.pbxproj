@@ -21,6 +21,8 @@
 		6315479C1AAD758D000CC523 /* Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6315479B1AAD758D000CC523 /* Demo.plist */; };
 		631547A01AAD7B60000CC523 /* PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315479F1AAD7B60000CC523 /* PDMRender.m */; };
 		631547A31AAD89F2000CC523 /* PDMColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A21AAD89F2000CC523 /* PDMColorItem.m */; };
+		631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A51AAEC974000CC523 /* UIView+PDMRender.m */; };
+		631547A91AAECCED000CC523 /* UILabel+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A81AAECCED000CC523 /* UILabel+PDMRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		6315479F1AAD7B60000CC523 /* PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMRender.m; sourceTree = "<group>"; };
 		631547A11AAD89F2000CC523 /* PDMColorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMColorItem.h; sourceTree = "<group>"; };
 		631547A21AAD89F2000CC523 /* PDMColorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMColorItem.m; sourceTree = "<group>"; };
+		631547A41AAEC974000CC523 /* UIView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PDMRender.h"; sourceTree = "<group>"; };
+		631547A51AAEC974000CC523 /* UIView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PDMRender.m"; sourceTree = "<group>"; };
+		631547A71AAECCED000CC523 /* UILabel+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+PDMRender.h"; sourceTree = "<group>"; };
+		631547A81AAECCED000CC523 /* UILabel+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PDMRender.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +210,10 @@
 			children = (
 				6315479E1AAD7B60000CC523 /* PDMRender.h */,
 				6315479F1AAD7B60000CC523 /* PDMRender.m */,
+				631547A41AAEC974000CC523 /* UIView+PDMRender.h */,
+				631547A51AAEC974000CC523 /* UIView+PDMRender.m */,
+				631547A71AAECCED000CC523 /* UILabel+PDMRender.h */,
+				631547A81AAECCED000CC523 /* UILabel+PDMRender.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -310,8 +320,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631547A91AAECCED000CC523 /* UILabel+PDMRender.m in Sources */,
 				631547901AAD4F78000CC523 /* PDMApplication.m in Sources */,
 				6315476C1AAD47A8000CC523 /* ViewController.m in Sources */,
+				631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */,
 				631547961AAD50AE000CC523 /* PDMSkinManager.m in Sources */,
 				631547991AAD52D5000CC523 /* PDMSkinItem.m in Sources */,
 				631547A31AAD89F2000CC523 /* PDMColorItem.m in Sources */,

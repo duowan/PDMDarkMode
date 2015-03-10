@@ -48,6 +48,9 @@
 }
 
 - (void)colorItemWithOriginColor:(UIColor *)originColor withCompletionBlock:(void (^)(PDMColorItem *))completionBlock {
+    if (originColor == nil || completionBlock == nil) {
+        return;
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSUInteger originColorHash = [PDMColorItem colorHash:originColor];
         if (self.colorItemsDictionary[@(originColorHash)] != nil) {
@@ -79,7 +82,7 @@
                      return NSOrderedSame;
                  }
                  else {
-                     return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedAscending : NSOrderedDescending;
+                     return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedDescending : NSOrderedAscending;
                  }
             }];
             if (colorItemIndex == NSNotFound || colorItemIndex >= [self.colorItems.array count]) {
