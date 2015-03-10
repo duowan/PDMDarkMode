@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "PDMSkinItem.h"
 
 @interface PDMDarkModeTests : XCTestCase
 
@@ -25,16 +26,25 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testColorSearch {
+    PDMSkinItem *skinItem = [[PDMSkinItem alloc] init];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
+    [skinItem loadStyleSheetFromPlist:plistPath];
+    [skinItem colorItemWithOriginColor:[UIColor whiteColor] withCompletionBlock:^(PDMColorItem *foundItem) {
+        XCTAssertNotNil(foundItem);
+    }];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+- (void)testColorBinarySearch {
+    PDMSkinItem *skinItem = [[PDMSkinItem alloc] init];
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
+    [skinItem loadStyleSheetFromPlist:plistPath];
+    [skinItem colorItemWithOriginColor:[UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.0]
+                   withCompletionBlock:^(PDMColorItem *foundItem) {
+        XCTAssertNotNil(foundItem);
     }];
+    [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:5.0]];
 }
 
 @end

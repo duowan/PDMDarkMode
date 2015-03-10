@@ -14,6 +14,13 @@
 		631547711AAD47A9000CC523 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631547701AAD47A9000CC523 /* Images.xcassets */; };
 		631547741AAD47A9000CC523 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 631547721AAD47A9000CC523 /* LaunchScreen.xib */; };
 		631547801AAD47A9000CC523 /* PDMDarkModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315477F1AAD47A9000CC523 /* PDMDarkModeTests.m */; };
+		631547901AAD4F78000CC523 /* PDMApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315478F1AAD4F78000CC523 /* PDMApplication.m */; };
+		631547931AAD4FCD000CC523 /* PDMCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547921AAD4FCD000CC523 /* PDMCore.m */; };
+		631547961AAD50AE000CC523 /* PDMSkinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547951AAD50AE000CC523 /* PDMSkinManager.m */; };
+		631547991AAD52D5000CC523 /* PDMSkinItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547981AAD52D5000CC523 /* PDMSkinItem.m */; };
+		6315479C1AAD758D000CC523 /* Demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6315479B1AAD758D000CC523 /* Demo.plist */; };
+		631547A01AAD7B60000CC523 /* PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6315479F1AAD7B60000CC523 /* PDMRender.m */; };
+		631547A31AAD89F2000CC523 /* PDMColorItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A21AAD89F2000CC523 /* PDMColorItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,19 @@
 		631547791AAD47A9000CC523 /* PDMDarkModeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDMDarkModeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6315477E1AAD47A9000CC523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6315477F1AAD47A9000CC523 /* PDMDarkModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDMDarkModeTests.m; sourceTree = "<group>"; };
+		6315478E1AAD4F78000CC523 /* PDMApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMApplication.h; sourceTree = "<group>"; };
+		6315478F1AAD4F78000CC523 /* PDMApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMApplication.m; sourceTree = "<group>"; };
+		631547911AAD4FCD000CC523 /* PDMCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMCore.h; sourceTree = "<group>"; };
+		631547921AAD4FCD000CC523 /* PDMCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMCore.m; sourceTree = "<group>"; };
+		631547941AAD50AE000CC523 /* PDMSkinManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMSkinManager.h; sourceTree = "<group>"; };
+		631547951AAD50AE000CC523 /* PDMSkinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMSkinManager.m; sourceTree = "<group>"; };
+		631547971AAD52D5000CC523 /* PDMSkinItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMSkinItem.h; sourceTree = "<group>"; };
+		631547981AAD52D5000CC523 /* PDMSkinItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMSkinItem.m; sourceTree = "<group>"; };
+		6315479B1AAD758D000CC523 /* Demo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Demo.plist; sourceTree = "<group>"; };
+		6315479E1AAD7B60000CC523 /* PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMRender.h; sourceTree = "<group>"; };
+		6315479F1AAD7B60000CC523 /* PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMRender.m; sourceTree = "<group>"; };
+		631547A11AAD89F2000CC523 /* PDMColorItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMColorItem.h; sourceTree = "<group>"; };
+		631547A21AAD89F2000CC523 /* PDMColorItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMColorItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +101,8 @@
 		631547621AAD47A8000CC523 /* PDMDarkMode */ = {
 			isa = PBXGroup;
 			children = (
+				6315479A1AAD757F000CC523 /* Resources */,
+				631547891AAD4F5C000CC523 /* Classes */,
 				631547671AAD47A8000CC523 /* AppDelegate.h */,
 				631547681AAD47A8000CC523 /* AppDelegate.m */,
 				6315476A1AAD47A8000CC523 /* ViewController.h */,
@@ -117,6 +139,73 @@
 				6315477E1AAD47A9000CC523 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		631547891AAD4F5C000CC523 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6315478A1AAD4F5C000CC523 /* Application Logic */,
+				6315478E1AAD4F78000CC523 /* PDMApplication.h */,
+				6315478F1AAD4F78000CC523 /* PDMApplication.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6315478A1AAD4F5C000CC523 /* Application Logic */ = {
+			isa = PBXGroup;
+			children = (
+				6315479D1AAD7B4A000CC523 /* Render */,
+				6315478B1AAD4F5C000CC523 /* Core */,
+				6315478C1AAD4F5C000CC523 /* Entity */,
+				6315478D1AAD4F5C000CC523 /* Manager */,
+			);
+			path = "Application Logic";
+			sourceTree = "<group>";
+		};
+		6315478B1AAD4F5C000CC523 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				631547911AAD4FCD000CC523 /* PDMCore.h */,
+				631547921AAD4FCD000CC523 /* PDMCore.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6315478C1AAD4F5C000CC523 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				631547971AAD52D5000CC523 /* PDMSkinItem.h */,
+				631547981AAD52D5000CC523 /* PDMSkinItem.m */,
+				631547A11AAD89F2000CC523 /* PDMColorItem.h */,
+				631547A21AAD89F2000CC523 /* PDMColorItem.m */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		6315478D1AAD4F5C000CC523 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				631547941AAD50AE000CC523 /* PDMSkinManager.h */,
+				631547951AAD50AE000CC523 /* PDMSkinManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		6315479A1AAD757F000CC523 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6315479B1AAD758D000CC523 /* Demo.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6315479D1AAD7B4A000CC523 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				6315479E1AAD7B60000CC523 /* PDMRender.h */,
+				6315479F1AAD7B60000CC523 /* PDMRender.m */,
+			);
+			path = Render;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +252,7 @@
 		631547581AAD47A8000CC523 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = PDM;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "多玩事业部 iOS开发组 YY Inc.";
 				TargetAttributes = {
@@ -200,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6315476F1AAD47A9000CC523 /* Main.storyboard in Resources */,
+				6315479C1AAD758D000CC523 /* Demo.plist in Resources */,
 				631547741AAD47A9000CC523 /* LaunchScreen.xib in Resources */,
 				631547711AAD47A9000CC523 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +310,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631547901AAD4F78000CC523 /* PDMApplication.m in Sources */,
 				6315476C1AAD47A8000CC523 /* ViewController.m in Sources */,
+				631547961AAD50AE000CC523 /* PDMSkinManager.m in Sources */,
+				631547991AAD52D5000CC523 /* PDMSkinItem.m in Sources */,
+				631547A31AAD89F2000CC523 /* PDMColorItem.m in Sources */,
 				631547691AAD47A8000CC523 /* AppDelegate.m in Sources */,
 				631547661AAD47A8000CC523 /* main.m in Sources */,
+				631547931AAD4FCD000CC523 /* PDMCore.m in Sources */,
+				631547A01AAD7B60000CC523 /* PDMRender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
