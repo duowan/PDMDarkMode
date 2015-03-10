@@ -35,7 +35,7 @@
 }
 
 - (void)applyWithViewController:(UIViewController *)viewController {
-    [self.items enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PDMSkinItem *obj, BOOL *stop) {
+    [self.items enumerateObjectsWithOptions:kNilOptions usingBlock:^(PDMSkinItem *obj, BOOL *stop) {
         if (obj.applyClasses == nil && obj.avoidClasses == nil) {
             [self applySkinItem:obj view:viewController.view isRecursive:YES];
         }
@@ -53,7 +53,7 @@
 }
 
 - (void)applyWithView:(UIView *)view isRecursive:(BOOL)isRecursive {
-    [self.items enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PDMSkinItem *obj, BOOL *stop) {
+    [self.items enumerateObjectsWithOptions:kNilOptions usingBlock:^(PDMSkinItem *obj, BOOL *stop) {
         [self applySkinItem:obj view:view isRecursive:isRecursive];
     }];
 }

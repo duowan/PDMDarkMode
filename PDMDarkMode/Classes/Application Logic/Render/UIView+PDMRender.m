@@ -12,6 +12,12 @@
 @implementation UIView (PDMRender)
 
 - (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
+    if (self.pdm_isRended != nil) {
+        return;
+    }
+    else {
+        self.pdm_isRended = @YES;
+    }
     {
         //backgroundColor
         UIColor *backgroundColor = self.backgroundColor;
@@ -25,6 +31,12 @@
 }
 
 - (void)pdm_restore {
+    if (self.pdm_isRended == nil) {
+        return;
+    }
+    else {
+        self.pdm_isRended = nil;
+    }
     self.backgroundColor = self.pdm_restoreData[@"backgroundColor"];
 }
 
@@ -39,9 +51,21 @@
 }
 
 - (void)setObject:(id)object forRestoreKey:(NSString *)restoreKey {
-    NSMutableDictionary *mutableDictionary = self.pdm_restoreData == nil ? [@{} mutableCopy] : [self.pdm_restoreData mutableCopy];
-    [mutableDictionary setObject:object forKey:restoreKey];
-    self.pdm_restoreData = mutableDictionary;
+    if (object != nil && restoreKey != nil) {
+        NSMutableDictionary *mutableDictionary = self.pdm_restoreData == nil ? [@{} mutableCopy] : [self.pdm_restoreData mutableCopy];
+        [mutableDictionary setObject:object forKey:restoreKey];
+        self.pdm_restoreData = mutableDictionary;
+    }
+}
+
+#pragma mark - pdm_isRended {
+
+- (NSNumber *)pdm_isRended {
+    return objc_getAssociatedObject(self, "pdm_isRended");
+}
+
+- (void)setPdm_isRended:(NSNumber *)pdm_isRended {
+    objc_setAssociatedObject(self, "pdm_isRended", pdm_isRended, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
