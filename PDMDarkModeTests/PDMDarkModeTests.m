@@ -48,12 +48,15 @@
 }
 
 - (void)testNotATargetColorBinarySearch {
+    NSTimeInterval startTime = [[NSDate date] timeIntervalSince1970];
     PDMSkinItem *skinItem = [[PDMSkinItem alloc] init];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"plist"];
     [skinItem loadStyleSheetFromPlist:plistPath];
     [skinItem colorItemWithOriginColor:[UIColor colorWithRed:0.94 green:0.94 blue:0.99 alpha:1.0]
                    withCompletionBlock:^(PDMColorItem *foundItem) {
                        XCTAssertNil(foundItem);
+                       NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+                       NSLog(@"Performance:%f(ms)", (endTime - startTime)*1000);
                    }];
     [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 }
