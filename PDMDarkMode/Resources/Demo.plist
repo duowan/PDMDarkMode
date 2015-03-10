@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>1,1,1,1,0.05[纯白色]</key>
+	<key>255,255,255,1.0,5[纯白色]</key>
 	<string>0,0,0[纯黑色]</string>
 </dict>
 </plist>

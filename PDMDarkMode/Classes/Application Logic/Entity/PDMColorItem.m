@@ -49,19 +49,19 @@
     NSArray *colorComponents = [colorString componentsSeparatedByString:@","];
     CGFloat r = 0.0,g = 0.0,b = 0.0,a = 1.0,o=0.0;
     if ([colorComponents count] >= 1) {
-        r = [colorComponents[0] floatValue];
+        r = [colorComponents[0] floatValue] / 255.0;
     }
     if ([colorComponents count] >= 2) {
-        g = [colorComponents[1] floatValue];
+        g = [colorComponents[1] floatValue] / 255.0;
     }
     if ([colorComponents count] >= 3) {
-        b = [colorComponents[2] floatValue];
+        b = [colorComponents[2] floatValue] / 255.0;
     }
     if ([colorComponents count] >= 4) {
         a = [colorComponents[3] floatValue];
     }
     if ([colorComponents count] >= 5) {
-        o = [colorComponents[4] floatValue];
+        o = [colorComponents[4] floatValue] / 255.0;
         self.availabelOffset = o;
     }
     return [UIColor colorWithRed:r green:g blue:b alpha:a];

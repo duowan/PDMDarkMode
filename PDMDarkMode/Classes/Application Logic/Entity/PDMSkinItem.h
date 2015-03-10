@@ -33,8 +33,8 @@
  *  value = 目标色值 r,g,b,a[注释]
  *  r,g,b,a,o 意思是 Red Green Blue Alpha + Offset（色差）
  *  其中r,g,b,a,o均为10进制
- *  r,g,b,a,o = [0.0, 1.0]
- *  一个标准的格式：纯黑色 0,0,0,1,0 纯白色 1,1,1,1,0
+ *  r,g,b ~ [0,255] a ~ [0.0,1.0] o ~ [0,255]
+ *  一个标准的格式：纯黑色 0,0,0,1.0,0 纯白色 255,255,255,1.0,0
  *  当Offset色差存在时，识别颜色时允许目标View原始色值有Offset值的上下浮动
  */
 @property (nonatomic, copy) NSDictionary *styleSheet;
