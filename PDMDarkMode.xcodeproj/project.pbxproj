@@ -25,6 +25,8 @@
 		631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A51AAEC974000CC523 /* UIView+PDMRender.m */; };
 		631547A91AAECCED000CC523 /* UILabel+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 631547A81AAECCED000CC523 /* UILabel+PDMRender.m */; };
 		63DF901F1AB00F230034C63D /* UITextView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF901E1AB00F230034C63D /* UITextView+PDMRender.m */; };
+		63DF90221AB014420034C63D /* UIButton+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90211AB014420034C63D /* UIButton+PDMRender.m */; };
+		63DF90251AB0144F0034C63D /* UITextField+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		631547A81AAECCED000CC523 /* UILabel+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PDMRender.m"; sourceTree = "<group>"; };
 		63DF901D1AB00F230034C63D /* UITextView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PDMRender.h"; sourceTree = "<group>"; };
 		63DF901E1AB00F230034C63D /* UITextView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PDMRender.m"; sourceTree = "<group>"; };
+		63DF90201AB014420034C63D /* UIButton+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PDMRender.h"; sourceTree = "<group>"; };
+		63DF90211AB014420034C63D /* UIButton+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PDMRender.m"; sourceTree = "<group>"; };
+		63DF90231AB0144F0034C63D /* UITextField+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+PDMRender.h"; sourceTree = "<group>"; };
+		63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PDMRender.m"; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -235,6 +241,10 @@
 				631547A81AAECCED000CC523 /* UILabel+PDMRender.m */,
 				63DF901D1AB00F230034C63D /* UITextView+PDMRender.h */,
 				63DF901E1AB00F230034C63D /* UITextView+PDMRender.m */,
+				63DF90201AB014420034C63D /* UIButton+PDMRender.h */,
+				63DF90211AB014420034C63D /* UIButton+PDMRender.m */,
+				63DF90231AB0144F0034C63D /* UITextField+PDMRender.h */,
+				63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -385,7 +395,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				631547A91AAECCED000CC523 /* UILabel+PDMRender.m in Sources */,
+				63DF90221AB014420034C63D /* UIButton+PDMRender.m in Sources */,
 				631547901AAD4F78000CC523 /* PDMApplication.m in Sources */,
+				63DF90251AB0144F0034C63D /* UITextField+PDMRender.m in Sources */,
 				6315476C1AAD47A8000CC523 /* ViewController.m in Sources */,
 				63DF901F1AB00F230034C63D /* UITextView+PDMRender.m in Sources */,
 				631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */,

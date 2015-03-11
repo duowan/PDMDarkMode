@@ -19,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation ViewController
@@ -75,6 +77,10 @@
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
         [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+//        self.textField.layer.borderColor = [UIColor whiteColor].CGColor;
+//        self.textField.layer.cornerRadius = 8.0f;
+//        self.textField.layer.masksToBounds = YES;
+//        self.textField.layer.borderWidth = 1.0f;
     }
     else {
         [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];

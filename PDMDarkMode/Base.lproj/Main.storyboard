@@ -69,8 +69,8 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOR-Qf-HxG">
                                 <rect key="frame" x="91" y="230" width="46" height="30"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -106,6 +106,15 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TextField" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGc-Ss-IVN">
+                                <rect key="frame" x="112" y="371" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="x9g-mu-hGX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -119,6 +128,8 @@
                             <constraint firstItem="QGE-kY-nfm" firstAttribute="top" secondItem="ATs-ip-nia" secondAttribute="bottom" constant="8" id="bAI-aU-nUq"/>
                             <constraint firstItem="ATs-ip-nia" firstAttribute="top" secondItem="5iR-pC-G5o" secondAttribute="bottom" constant="12" id="ffA-cj-1ON"/>
                             <constraint firstItem="9mE-fD-rkc" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="47" id="kC2-k6-4FB"/>
+                            <constraint firstItem="gGc-Ss-IVN" firstAttribute="top" secondItem="QGE-kY-nfm" secondAttribute="bottom" constant="8" id="keg-dJ-l0I"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="gGc-Ss-IVN" secondAttribute="centerX" constant="-0.5" id="v2Z-Lw-H9n"/>
                             <constraint firstItem="QGE-kY-nfm" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="wLX-zO-6Oe"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="9mE-fD-rkc" secondAttribute="bottom" constant="8" id="yPe-UP-S7q"/>
                         </constraints>
@@ -133,6 +144,7 @@
                     <connections>
                         <outlet property="firstLabel" destination="5iR-pC-G5o" id="cqK-Dd-HRu"/>
                         <outlet property="secondLabel" destination="ATs-ip-nia" id="peX-cu-4Yk"/>
+                        <outlet property="textField" destination="gGc-Ss-IVN" id="iLh-WM-OsU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
