@@ -60,6 +60,9 @@
     [text addAttribute:NSForegroundColorAttributeName
                  value:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0]
                  range:NSMakeRange(0, 17)];
+    [text addAttribute:NSForegroundColorAttributeName
+                 value:[UIColor greenColor]
+                 range:NSMakeRange(16, 1)];
     self.firstLabel.attributedText = text;
     self.secondLabel.text = [NSString stringWithFormat:@"Fast Change Test:%u", arc4random()];
 }
