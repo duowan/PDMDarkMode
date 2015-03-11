@@ -36,7 +36,19 @@
         self.firstLabel.attributedText = text;
         self.secondLabel.text = @"Hello, World!";
     });
+    [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(fastChangeTest) userInfo:nil repeats:YES];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)fastChangeTest {
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Fast Change Test:%u", arc4random()]];
+    [text addAttribute:NSForegroundColorAttributeName
+                 value:[UIColor blackColor]
+                 range:NSMakeRange(0, [text length])];
+    [text addAttribute:NSForegroundColorAttributeName
+                 value:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0]
+                 range:NSMakeRange(0, 17)];
+    self.firstLabel.attributedText = text;
 }
 
 - (void)didReceiveMemoryWarning {

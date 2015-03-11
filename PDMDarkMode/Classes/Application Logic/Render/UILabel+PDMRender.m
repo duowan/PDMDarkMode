@@ -19,6 +19,7 @@
     }
     NSAttributedString *attributedText = self.attributedText;
     self.pdm_previousAttributedString = self.attributedText;
+    NSMutableAttributedString *mutableAttributedText = [attributedText mutableCopy];
     NSRange attributedTextRange = NSMakeRange(0, [attributedText length]);
     [attributedText enumerateAttribute:NSForegroundColorAttributeName inRange:attributedTextRange options:kNilOptions usingBlock:^(id value, NSRange range, BOOL *stop) {
         if (NSEqualRanges(range, attributedTextRange)) {
@@ -34,12 +35,12 @@
             UIColor *textColor = value;
             [skinItem colorItemWithOriginColor:textColor withCompletionBlock:^(PDMColorItem *foundItem) {
                 if (foundItem != nil) {
-                    NSMutableAttributedString *mutableString = [self.attributedText mutableCopy];
-                    [mutableString addAttribute:NSForegroundColorAttributeName
-                                          value:foundItem.replacingColor
-                                           range:range];
-                    [mutableString addAttribute:@"r" value:@1 range:NSMakeRange(0, [mutableString length])];
-                    self.attributedText = [mutableString copy];
+                    [mutableAttributedText addAttribute:NSForegroundColorAttributeName
+                                                  value:foundItem.replacingColor
+                                                  range:range];
+                    if ([self.attributedText.string isEqualToString:mutableAttributedText.string]) {
+                        self.attributedText = [mutableAttributedText copy];
+                    }
                 }
             }];
         }
