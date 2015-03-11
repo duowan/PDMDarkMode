@@ -1,16 +1,16 @@
 //
-//  UILabel+PDMRender.m
+//  UITextView+PDMRender.m
 //  PDMDarkMode
 //
-//  Created by 崔 明辉 on 15/3/10.
+//  Created by 崔 明辉 on 15/3/11.
 //  Copyright (c) 2015年 多玩事业部 iOS开发组 YY Inc. All rights reserved.
 //
 
-#import "UILabel+PDMRender.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "UITextView+PDMRender.h"
 #import <objc/runtime.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@implementation UILabel (PDMRender)
+@implementation UITextView (PDMRender)
 
 - (BOOL)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
     if (![super pdm_rendWithSkinItem:skinItem] &&

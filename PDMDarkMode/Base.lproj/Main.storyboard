@@ -67,15 +67,60 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" id="u4Y-qc-e5B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOR-Qf-HxG">
+                                <rect key="frame" x="91" y="230" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mE-fD-rkc">
+                                <rect key="frame" x="184" y="230" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGE-kY-nfm">
+                                <rect key="frame" x="40" y="329" width="240" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="aHn-cT-Qlq"/>
+                                    <constraint firstAttribute="width" constant="240" id="mAv-9J-sRI"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Text">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="View">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="NOR-Qf-HxG" secondAttribute="bottom" constant="8" id="15n-dD-crU"/>
                             <constraint firstAttribute="centerX" secondItem="fAj-TB-m3J" secondAttribute="centerX" id="5FI-tH-XFU"/>
                             <constraint firstAttribute="centerY" secondItem="5iR-pC-G5o" secondAttribute="centerY" constant="6" id="GZs-dh-Lvb"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fAj-TB-m3J" secondAttribute="bottom" constant="8" id="PXA-au-8Rh"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="NOR-Qf-HxG" secondAttribute="centerX" constant="46" id="Q5o-dh-O9f"/>
                             <constraint firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="VXp-X0-9Lh"/>
                             <constraint firstAttribute="centerX" secondItem="ATs-ip-nia" secondAttribute="centerX" id="YzU-E8-Lcz"/>
+                            <constraint firstItem="QGE-kY-nfm" firstAttribute="top" secondItem="ATs-ip-nia" secondAttribute="bottom" constant="8" id="bAI-aU-nUq"/>
                             <constraint firstItem="ATs-ip-nia" firstAttribute="top" secondItem="5iR-pC-G5o" secondAttribute="bottom" constant="12" id="ffA-cj-1ON"/>
+                            <constraint firstItem="9mE-fD-rkc" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="47" id="kC2-k6-4FB"/>
+                            <constraint firstItem="QGE-kY-nfm" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="wLX-zO-6Oe"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="9mE-fD-rkc" secondAttribute="bottom" constant="8" id="yPe-UP-S7q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PDMDarkMode" id="6AD-wI-HGT">
@@ -92,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.13333333333333" y="451.56"/>
+            <point key="canvasLocation" x="298" y="451"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
