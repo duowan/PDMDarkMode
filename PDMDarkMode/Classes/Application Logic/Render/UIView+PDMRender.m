@@ -35,13 +35,15 @@
     }
     {
         //tintColor
-        UIColor *tintColor = self.tintColor;
-        [skinItem colorItemWithOriginColor:tintColor withCompletionBlock:^(PDMColorItem *foundItem) {
-            if (foundItem != nil) {
-                self.tintColor = foundItem.replacingColor;
-                [self setObject:tintColor forRestoreKey:@"tintColor"];
-            }
-        }];
+        if (self.tintColor != nil) {
+            UIColor *tintColor = self.tintColor;
+            [skinItem colorItemWithOriginColor:tintColor withCompletionBlock:^(PDMColorItem *foundItem) {
+                if (foundItem != nil) {
+                    self.tintColor = foundItem.replacingColor;
+                    [self setObject:tintColor forRestoreKey:@"tintColor"];
+                }
+            }];
+        }
     }
     return YES;
 }
@@ -54,7 +56,9 @@
         self.pdm_skinItems = nil;
     }
     self.backgroundColor = self.pdm_restoreData[@"backgroundColor"];
-    self.tintColor = self.pdm_restoreData[@"tintColor"];
+    if (self.pdm_restoreData[@"tintColor"] != nil) {
+        self.tintColor = self.pdm_restoreData[@"tintColor"];
+    }
 }
 
 #pragma mark - pdm_restoreData
