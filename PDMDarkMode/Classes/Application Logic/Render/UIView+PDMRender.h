@@ -16,7 +16,9 @@
 
 @property (nonatomic, copy) NSDictionary *pdm_restoreData;
 
-- (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem;
+- (BOOL)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem;
+
+- (void)pdm_configureReactiveCocoa;
 
 - (void)pdm_restore;
 

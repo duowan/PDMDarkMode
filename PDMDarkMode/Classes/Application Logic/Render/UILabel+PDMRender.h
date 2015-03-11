@@ -11,4 +11,6 @@
 
 @interface UILabel (PDMRender)
 
+@property (nonatomic, strong) NSAttributedString *pdm_previousAttributedString;
+
 @end

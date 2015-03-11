@@ -11,11 +11,14 @@
 
 @implementation UIView (PDMRender)
 
-- (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
+- (BOOL)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
     if ([self.pdm_skinItems containsObject:skinItem]) {
-        return;
+        return NO;
     }
     else {
+        if (self.pdm_skinItems == nil) {
+            [self pdm_configureReactiveCocoa];//Configure ReactiveCocoa
+        }
         NSMutableSet *skinItems = self.pdm_skinItems == nil ? [NSMutableSet set] : [self.pdm_skinItems mutableCopy];
         [skinItems addObject:skinItem];
         self.pdm_skinItems = skinItems;
@@ -30,6 +33,7 @@
             }
         }];
     }
+    return YES;
 }
 
 - (void)pdm_restore {
@@ -60,7 +64,7 @@
     }
 }
 
-#pragma mark - pdm_skinItems {
+#pragma mark - pdm_skinItems
 
 - (NSSet *)pdm_skinItems {
     return (NSSet *)objc_getAssociatedObject(self, "pdm_skinItems");
@@ -68,6 +72,12 @@
 
 - (void)setPdm_skinItems:(NSSet *)pdm_skinItems {
     objc_setAssociatedObject(self, "pdm_skinItems", pdm_skinItems, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+#pragma mark - ReactiveCocoa
+
+- (void)pdm_configureReactiveCocoa {
+    
 }
 
 @end

@@ -7,12 +7,18 @@
 //
 
 #import "UILabel+PDMRender.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <objc/runtime.h>
 
 @implementation UILabel (PDMRender)
 
-- (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
-    [super pdm_rendWithSkinItem:skinItem];
+- (BOOL)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
+    if (![super pdm_rendWithSkinItem:skinItem] &&
+        [self.pdm_previousAttributedString.string isEqualToString:self.attributedText.string]) {
+        return NO;
+    }
     NSAttributedString *attributedText = self.attributedText;
+    self.pdm_previousAttributedString = self.attributedText;
     NSRange attributedTextRange = NSMakeRange(0, [attributedText length]);
     [attributedText enumerateAttribute:NSForegroundColorAttributeName inRange:attributedTextRange options:kNilOptions usingBlock:^(id value, NSRange range, BOOL *stop) {
         if (NSEqualRanges(range, attributedTextRange)) {
@@ -39,6 +45,7 @@
         }
     }];
     [self setObject:attributedText forRestoreKey:@"attributedText"];
+    return YES;
 }
 
 - (void)pdm_restore {
@@ -49,6 +56,29 @@
     else {
         self.attributedText = self.pdm_restoreData[@"attributedText"];
     }
+}
+
+#pragma mark - ReactiveCocoa
+
+- (void)pdm_configureReactiveCocoa {
+    [super pdm_configureReactiveCocoa];
+    @weakify(self);
+    [RACObserve(self, attributedText) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.pdm_skinItems enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+            [self pdm_rendWithSkinItem:obj];
+        }];
+    }];
+}
+
+#pragma mark - pdm_previousAttributedString
+
+- (void)setPdm_previousAttributedString:(NSAttributedString *)pdm_previousAttributedString {
+    objc_setAssociatedObject(self, "pdm_previousAttributedString", pdm_previousAttributedString, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSAttributedString *)pdm_previousAttributedString {
+    return (NSAttributedString *)objc_getAssociatedObject(self, "pdm_previousAttributedString");
 }
 
 @end
