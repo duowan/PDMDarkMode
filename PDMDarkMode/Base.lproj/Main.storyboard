@@ -58,10 +58,21 @@
                                 <color key="textColor" red="0.44772820723684209" green="0.14566200657894737" blue="0.33352179276315785" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAj-TB-m3J">
+                                <rect key="frame" x="91" y="530" width="139" height="30"/>
+                                <state key="normal" title="Push ViewController">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="u4Y-qc-e5B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fAj-TB-m3J" secondAttribute="centerX" id="5FI-tH-XFU"/>
                             <constraint firstAttribute="centerY" secondItem="5iR-pC-G5o" secondAttribute="centerY" constant="6" id="GZs-dh-Lvb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fAj-TB-m3J" secondAttribute="bottom" constant="8" id="PXA-au-8Rh"/>
                             <constraint firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="VXp-X0-9Lh"/>
                             <constraint firstAttribute="centerX" secondItem="ATs-ip-nia" secondAttribute="centerX" id="YzU-E8-Lcz"/>
                             <constraint firstItem="ATs-ip-nia" firstAttribute="top" secondItem="5iR-pC-G5o" secondAttribute="bottom" constant="12" id="ffA-cj-1ON"/>
@@ -76,6 +87,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="firstLabel" destination="5iR-pC-G5o" id="cqK-Dd-HRu"/>
+                        <outlet property="secondLabel" destination="ATs-ip-nia" id="peX-cu-4Yk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -88,4 +100,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="LER-Uf-RBH"/>
+    </inferredMetricsTieBreakers>
 </document>

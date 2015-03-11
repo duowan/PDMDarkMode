@@ -15,9 +15,16 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *firstLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *secondLabel;
+
 @end
 
 @implementation ViewController
+
+- (void)dealloc
+{
+    NSLog(@"ViewController Deallocing");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +34,7 @@
                      value:[UIColor blackColor]
                      range:NSMakeRange(0, [text length])];
         self.firstLabel.attributedText = text;
+        self.secondLabel.text = @"Hello, World!";
     });
     // Do any additional setup after loading the view, typically from a nib.
 }
