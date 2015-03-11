@@ -15,11 +15,15 @@
 
 @property (nonatomic, strong) NSTimer *fastChangeTimer;
 
+@property (nonatomic, strong) NSTimer *changePageControlTimer;
+
 @property (weak, nonatomic) IBOutlet UILabel *firstLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
 
@@ -47,11 +51,14 @@
     [super viewDidAppear:animated];
     self.fastChangeTimer =
     [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(fastChangeTest) userInfo:nil repeats:YES];
+    self.changePageControlTimer =
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(changePageControl) userInfo:nil repeats:YES];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self.fastChangeTimer invalidate];
+    [self.changePageControlTimer invalidate];
 }
 
 - (void)fastChangeTest {
@@ -69,6 +76,15 @@
     self.secondLabel.text = [NSString stringWithFormat:@"Fast Change Test:%u", arc4random()];
 }
 
+- (void)changePageControl {
+    if (self.pageControl.currentPage + 1 >= self.pageControl.numberOfPages) {
+        self.pageControl.currentPage = 0;
+    }
+    else {
+        self.pageControl.currentPage++;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -77,10 +93,6 @@
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
         [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
-//        self.textField.layer.borderColor = [UIColor whiteColor].CGColor;
-//        self.textField.layer.cornerRadius = 8.0f;
-//        self.textField.layer.masksToBounds = YES;
-//        self.textField.layer.borderWidth = 1.0f;
     }
     else {
         [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
