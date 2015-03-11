@@ -15,9 +15,22 @@
         return NO;
     }
     if (self.color != nil) {
-        
+        UIColor *color = self.color;
+        [skinItem colorItemWithOriginColor:color withCompletionBlock:^(PDMColorItem *foundItem) {
+            if (foundItem != nil) {
+                self.color = foundItem.replacingColor;
+                [self setObject:color forRestoreKey:@"color"];
+            }
+        }];
     }
     return YES;
+}
+
+- (void)pdm_restore {
+    [super pdm_restore];
+    if (self.pdm_restoreData[@"color"] != nil) {
+        self.color = self.pdm_restoreData[@"color"];
+    }
 }
 
 @end
