@@ -13,12 +13,21 @@
     BOOL isOn;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *firstLabel;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Testing"];
+//        [text addAttribute:NSForegroundColorAttributeName
+//                     value:[UIColor blackColor]
+//                     range:NSMakeRange(0, [text length])];
+//        self.firstLabel.attributedText = text;
+//    });
     // Do any additional setup after loading the view, typically from a nib.
 }
 

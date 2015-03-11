@@ -12,11 +12,13 @@
 @implementation UIView (PDMRender)
 
 - (void)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem {
-    if (self.pdm_isRended != nil) {
+    if ([self.pdm_skinItems containsObject:skinItem]) {
         return;
     }
     else {
-        self.pdm_isRended = @YES;
+        NSMutableSet *skinItems = self.pdm_skinItems == nil ? [NSMutableSet set] : [self.pdm_skinItems mutableCopy];
+        [skinItems addObject:skinItem];
+        self.pdm_skinItems = skinItems;
     }
     {
         //backgroundColor
@@ -31,11 +33,11 @@
 }
 
 - (void)pdm_restore {
-    if (self.pdm_isRended == nil) {
+    if (self.pdm_skinItems == nil) {
         return;
     }
     else {
-        self.pdm_isRended = nil;
+        self.pdm_skinItems = nil;
     }
     self.backgroundColor = self.pdm_restoreData[@"backgroundColor"];
 }
@@ -58,14 +60,14 @@
     }
 }
 
-#pragma mark - pdm_isRended {
+#pragma mark - pdm_skinItems {
 
-- (NSNumber *)pdm_isRended {
-    return objc_getAssociatedObject(self, "pdm_isRended");
+- (NSSet *)pdm_skinItems {
+    return (NSSet *)objc_getAssociatedObject(self, "pdm_skinItems");
 }
 
-- (void)setPdm_isRended:(NSNumber *)pdm_isRended {
-    objc_setAssociatedObject(self, "pdm_isRended", pdm_isRended, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setPdm_skinItems:(NSSet *)pdm_skinItems {
+    objc_setAssociatedObject(self, "pdm_skinItems", pdm_skinItems, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

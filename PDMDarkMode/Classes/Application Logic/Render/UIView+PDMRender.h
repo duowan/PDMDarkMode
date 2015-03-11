@@ -12,7 +12,7 @@
 
 @interface UIView (PDMRender)
 
-@property (nonatomic, strong) NSNumber *pdm_isRended;
+@property (nonatomic, copy) NSSet *pdm_skinItems;
 
 @property (nonatomic, copy) NSDictionary *pdm_restoreData;
 

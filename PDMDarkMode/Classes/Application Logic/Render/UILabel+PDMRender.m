@@ -19,7 +19,7 @@
             UIColor *textColor = self.textColor;
             [skinItem colorItemWithOriginColor:textColor withCompletionBlock:^(PDMColorItem *foundItem) {
                 if (foundItem != nil) {
-                    self.textColor = foundItem.replacingColor;
+//                    self.textColor = foundItem.replacingColor;
                 }
             }];
             [self setObject:textColor forRestoreKey:@"textColor"];
@@ -29,7 +29,10 @@
             [skinItem colorItemWithOriginColor:textColor withCompletionBlock:^(PDMColorItem *foundItem) {
                 if (foundItem != nil) {
                     NSMutableAttributedString *mutableString = [self.attributedText mutableCopy];
-                    [mutableString setAttributes:@{NSForegroundColorAttributeName: foundItem.replacingColor} range:range];
+                    [mutableString addAttribute:NSForegroundColorAttributeName
+                                          value:foundItem.replacingColor
+                                           range:range];
+                    [mutableString addAttribute:@"r" value:@1 range:NSMakeRange(0, [mutableString length])];
                     self.attributedText = [mutableString copy];
                 }
             }];

@@ -8,6 +8,7 @@
 
 #import "PDMSkinManager.h"
 #import "PDMRender.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface PDMSkinManager ()
 
@@ -58,26 +59,26 @@
     }];
 }
 
-- (void)applySkinItem:(PDMSkinItem *)SkinItem view:(UIView *)view isRecursive:(BOOL)isRecursive {
+- (void)applySkinItem:(PDMSkinItem *)skinItem view:(UIView *)view isRecursive:(BOOL)isRecursive {
     BOOL isValid = NO;
-    if (SkinItem.applyClasses == nil && SkinItem.avoidClasses == nil) {
+    if (skinItem.applyClasses == nil && skinItem.avoidClasses == nil) {
         isValid = YES;
     }
-    else if (SkinItem.applyClasses != nil) {
-        if ([SkinItem.applyClasses containsObject:NSStringFromClass([view class])]) {
+    else if (skinItem.applyClasses != nil) {
+        if ([skinItem.applyClasses containsObject:NSStringFromClass([view class])]) {
             isValid = YES;
         }
     }
-    else if (SkinItem.avoidClasses != nil) {
-        if (![SkinItem.avoidClasses containsObject:NSStringFromClass([view class])]) {
+    else if (skinItem.avoidClasses != nil) {
+        if (![skinItem.avoidClasses containsObject:NSStringFromClass([view class])]) {
             isValid = YES;
         }
     }
     if (isValid) {
-        [self.render rendWithSkinItem:SkinItem forView:view];
+        [self.render rendWithSkinItem:skinItem forView:view];
         if (isRecursive) {
             [[view subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                [self applySkinItem:SkinItem view:obj isRecursive:isRecursive];
+                [self applySkinItem:skinItem view:obj isRecursive:isRecursive];
             }];
         }
     }
