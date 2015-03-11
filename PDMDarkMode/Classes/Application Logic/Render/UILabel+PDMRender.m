@@ -19,7 +19,7 @@
             UIColor *textColor = self.textColor;
             [skinItem colorItemWithOriginColor:textColor withCompletionBlock:^(PDMColorItem *foundItem) {
                 if (foundItem != nil) {
-//                    self.textColor = foundItem.replacingColor;
+                    self.textColor = foundItem.replacingColor;
                 }
             }];
             [self setObject:textColor forRestoreKey:@"textColor"];
