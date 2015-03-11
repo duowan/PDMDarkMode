@@ -55,7 +55,9 @@
     else {
         self.pdm_skinItems = nil;
     }
-    self.backgroundColor = self.pdm_restoreData[@"backgroundColor"];
+    if (self.pdm_restoreData[@"backgroundColor"] != nil) {
+        self.backgroundColor = self.pdm_restoreData[@"backgroundColor"];
+    }
     if (self.pdm_restoreData[@"tintColor"] != nil) {
         self.tintColor = self.pdm_restoreData[@"tintColor"];
     }
