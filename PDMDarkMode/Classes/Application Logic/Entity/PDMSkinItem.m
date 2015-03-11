@@ -35,6 +35,7 @@
         [items addObject:item];
         [itemsDictionary setObject:item forKey:@(item.originalColorHash)];
     }];
+    NSArray *sortedItems =
     [items sortedArrayUsingComparator:^NSComparisonResult(PDMColorItem *obj1, PDMColorItem *obj2) {
         if (obj1.originalColorHash == obj2.originalColorHash) {
             return NSOrderedSame;
@@ -43,7 +44,7 @@
             return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedAscending : NSOrderedDescending;
         }
     }];
-    self.colorItems = [NSOrderedSet orderedSetWithArray:items];
+    self.colorItems = [NSOrderedSet orderedSetWithArray:sortedItems];
     self.colorItemsDictionary = itemsDictionary;
 }
 
@@ -65,10 +66,11 @@
             searchingItem.originalColor = originColor;
             searchingItem.originalColorHash = [PDMColorItem colorHash:originColor];
             NSUInteger colorItemIndex =
-            [self.colorItems
+            [self.colorItems.array
              indexOfObject:searchingItem
              inSortedRange:NSMakeRange(0, self.colorItems.count)
-             options:NSBinarySearchingFirstEqual usingComparator:^NSComparisonResult(PDMColorItem *obj1, PDMColorItem *obj2) {
+             options:NSBinarySearchingFirstEqual
+             usingComparator:^NSComparisonResult(PDMColorItem *obj1, PDMColorItem *obj2) {
                  NSUInteger currentOffset = (NSUInteger)labs(obj1.originalColorHash - obj2.originalColorHash);
                  CGFloat availabelOffset = MAX(obj1.availabelOffset, obj2.availabelOffset);
                  if (availabelOffset > 0.001 &&
@@ -82,7 +84,7 @@
                      return NSOrderedSame;
                  }
                  else {
-                     return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedDescending : NSOrderedAscending;
+                     return obj1.originalColorHash > obj2.originalColorHash ? NSOrderedAscending : NSOrderedDescending;
                  }
             }];
             if (colorItemIndex == NSNotFound || colorItemIndex >= [self.colorItems.array count]) {

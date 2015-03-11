@@ -28,6 +28,7 @@
 		63DF90221AB014420034C63D /* UIButton+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90211AB014420034C63D /* UIButton+PDMRender.m */; };
 		63DF90251AB0144F0034C63D /* UITextField+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */; };
 		63DF90281AB01BD10034C63D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90271AB01BD10034C63D /* TableViewController.m */; };
+		63DF902B1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF902A1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+PDMRender.m"; sourceTree = "<group>"; };
 		63DF90261AB01BD10034C63D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		63DF90271AB01BD10034C63D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		63DF90291AB026780034C63D /* UIActivityIndicatorView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+PDMRender.h"; sourceTree = "<group>"; };
+		63DF902A1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+PDMRender.m"; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -250,6 +253,8 @@
 				63DF90211AB014420034C63D /* UIButton+PDMRender.m */,
 				63DF90231AB0144F0034C63D /* UITextField+PDMRender.h */,
 				63DF90241AB0144F0034C63D /* UITextField+PDMRender.m */,
+				63DF90291AB026780034C63D /* UIActivityIndicatorView+PDMRender.h */,
+				63DF902A1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				631547901AAD4F78000CC523 /* PDMApplication.m in Sources */,
 				63DF90251AB0144F0034C63D /* UITextField+PDMRender.m in Sources */,
 				6315476C1AAD47A8000CC523 /* ViewController.m in Sources */,
+				63DF902B1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m in Sources */,
 				63DF901F1AB00F230034C63D /* UITextView+PDMRender.m in Sources */,
 				631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */,
 				631547961AAD50AE000CC523 /* PDMSkinManager.m in Sources */,
