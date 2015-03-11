@@ -93,9 +93,11 @@
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
         [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+        [[[PDMApplication sharedApplication] defaultManager] applyWithView:self.navigationController.navigationBar isRecursive:YES];
     }
     else {
         [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithView:self.navigationController.navigationBar isRecursive:YES];
     }
     isOn = !isOn;
 }
