@@ -1,5 +1,5 @@
 //
-//  UITextField+PDMRender.h
+//  TableViewController.h
 //  PDMDarkMode
 //
 //  Created by 崔 明辉 on 15/3/11.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+PDMRender.h"
 
-@interface UITextField (PDMRender)
+@interface TableViewController : UITableViewController
 
 @end
