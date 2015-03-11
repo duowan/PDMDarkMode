@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "UIView+PDMRender.h"
 
+@class RACDisposable;
+
 @interface UILabel (PDMRender)
 
 @property (nonatomic, strong) NSAttributedString *pdm_previousAttributedString;
+
+@property (nonatomic, strong) RACDisposable *pdm_attributedTextSingal;
 
 @end

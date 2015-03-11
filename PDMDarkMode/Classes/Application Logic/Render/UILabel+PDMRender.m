@@ -57,6 +57,7 @@
     else {
         self.attributedText = self.pdm_restoreData[@"attributedText"];
     }
+    [self.pdm_attributedTextSingal dispose];
 }
 
 #pragma mark - ReactiveCocoa
@@ -64,6 +65,7 @@
 - (void)pdm_configureReactiveCocoa {
     [super pdm_configureReactiveCocoa];
     @weakify(self);
+    self.pdm_attributedTextSingal =
     [RACObserve(self, attributedText) subscribeNext:^(id x) {
         @strongify(self);
         [self.pdm_skinItems enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
@@ -80,6 +82,16 @@
 
 - (NSAttributedString *)pdm_previousAttributedString {
     return (NSAttributedString *)objc_getAssociatedObject(self, "pdm_previousAttributedString");
+}
+
+#pragma mark - pdm_attributedTextSingal
+
+- (void)setPdm_attributedTextSingal:(RACDisposable *)pdm_attributedTextSingal {
+    objc_setAssociatedObject(self, "pdm_attributedTextSingal", pdm_attributedTextSingal, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (RACDisposable *)pdm_attributedTextSingal {
+    return objc_getAssociatedObject(self, "pdm_attributedTextSingal");
 }
 
 @end
