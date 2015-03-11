@@ -13,6 +13,8 @@
     BOOL isOn;
 }
 
+@property (nonatomic, strong) NSTimer *fastChangeTimer;
+
 @property (weak, nonatomic) IBOutlet UILabel *firstLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *secondLabel;
@@ -28,16 +30,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Testing"];
-        [text addAttribute:NSForegroundColorAttributeName
-                     value:[UIColor blackColor]
-                     range:NSMakeRange(0, [text length])];
-        self.firstLabel.attributedText = text;
-        self.secondLabel.text = @"Hello, World!";
-    });
-    [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(fastChangeTest) userInfo:nil repeats:YES];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Testing"];
+//        [text addAttribute:NSForegroundColorAttributeName
+//                     value:[UIColor blackColor]
+//                     range:NSMakeRange(0, [text length])];
+//        self.firstLabel.attributedText = text;
+//        self.secondLabel.text = @"Hello, World!";
+//    });
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.fastChangeTimer =
+    [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(fastChangeTest) userInfo:nil repeats:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.fastChangeTimer invalidate];
 }
 
 - (void)fastChangeTest {
@@ -49,6 +61,7 @@
                  value:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0]
                  range:NSMakeRange(0, 17)];
     self.firstLabel.attributedText = text;
+    self.secondLabel.text = [NSString stringWithFormat:@"Fast Change Test:%u", arc4random()];
 }
 
 - (void)didReceiveMemoryWarning {
