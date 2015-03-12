@@ -9,9 +9,9 @@
 #import "ViewController.h"
 #import "PDMApplication.h"
 
-@interface ViewController (){
-    BOOL isOn;
-}
+static BOOL isOn;
+
+@interface ViewController ()
 
 @property (nonatomic, strong) NSTimer *fastChangeTimer;
 
@@ -32,10 +32,18 @@
 - (void)dealloc
 {
     NSLog(@"ViewController Deallocing");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (isOn) {
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handlePDMSwitched)
+                                                 name:@"PDMSwitchedNotification"
+                                               object:nil];
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Testing"];
 //        [text addAttribute:NSForegroundColorAttributeName
@@ -45,6 +53,15 @@
 //        self.secondLabel.text = @"Hello, World!";
 //    });
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)handlePDMSwitched {
+    if (isOn) {
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+    }
+    else {
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -92,14 +109,13 @@
 
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
-        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
-        [[[PDMApplication sharedApplication] defaultManager] applyWithView:self.navigationController.navigationBar isRecursive:YES];
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self.navigationController];
     }
     else {
-        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
-        [[[PDMApplication sharedApplication] defaultManager] restoreWithView:self.navigationController.navigationBar isRecursive:YES];
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self.navigationController];
     }
     isOn = !isOn;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];
 }
 
 @end

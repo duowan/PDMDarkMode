@@ -61,6 +61,7 @@
     if (self.pdm_restoreData[@"tintColor"] != nil) {
         self.tintColor = self.pdm_restoreData[@"tintColor"];
     }
+    [self performSelector:@selector(setPdm_restoreData:) withObject:nil afterDelay:0.001];
 }
 
 #pragma mark - pdm_restoreData
