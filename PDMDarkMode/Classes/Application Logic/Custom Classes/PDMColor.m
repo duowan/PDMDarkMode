@@ -20,6 +20,7 @@
 {
     self = [super init];
     if (self) {
+        r = 0.0;g = 0.0;b = 0.0;a = 1.0;
         [color getRed:&r green:&g blue:&b alpha:&a];
     }
     return self;
