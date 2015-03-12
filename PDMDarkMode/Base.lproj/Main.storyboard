@@ -153,6 +153,11 @@
                                 </constraints>
                                 <color key="trackTintColor" white="0.0" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
                             </progressView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6WS-JQ-bBC">
+                                <rect key="frame" x="136" y="354" width="51" height="31"/>
+                                <color key="onTintColor" white="0.0" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -173,6 +178,7 @@
                             <constraint firstItem="AUQ-3I-m3M" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="dDt-6z-gxI"/>
                             <constraint firstItem="xZk-mP-0N7" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="0.5" id="e6w-wo-ki4"/>
                             <constraint firstItem="ATs-ip-nia" firstAttribute="top" secondItem="5iR-pC-G5o" secondAttribute="bottom" constant="12" id="ffA-cj-1ON"/>
+                            <constraint firstItem="6WS-JQ-bBC" firstAttribute="top" secondItem="AYl-O5-Zex" secondAttribute="bottom" constant="8" id="h52-Ob-qy5"/>
                             <constraint firstItem="AYl-O5-Zex" firstAttribute="top" secondItem="xZk-mP-0N7" secondAttribute="bottom" constant="8" id="h5X-7c-bVt"/>
                             <constraint firstItem="9mE-fD-rkc" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="47" id="kC2-k6-4FB"/>
                             <constraint firstItem="gGc-Ss-IVN" firstAttribute="top" secondItem="QGE-kY-nfm" secondAttribute="bottom" constant="8" id="keg-dJ-l0I"/>
@@ -180,6 +186,7 @@
                             <constraint firstItem="fAj-TB-m3J" firstAttribute="top" secondItem="hkQ-al-ddD" secondAttribute="bottom" constant="-3" id="nwQ-Sx-die"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="gGc-Ss-IVN" secondAttribute="centerX" constant="-0.5" id="v2Z-Lw-H9n"/>
                             <constraint firstItem="QGE-kY-nfm" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="wLX-zO-6Oe"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="6WS-JQ-bBC" secondAttribute="centerX" constant="-0.5" id="xK4-pJ-TSF"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="9mE-fD-rkc" secondAttribute="bottom" constant="8" id="yPe-UP-S7q"/>
                         </constraints>
                     </view>
