@@ -32,6 +32,7 @@
 		63DF902E1AB034170034C63D /* UIPageControl+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF902D1AB034170034C63D /* UIPageControl+PDMRender.m */; };
 		63DF90311AB049770034C63D /* UIToolbar+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90301AB049770034C63D /* UIToolbar+PDMRender.m */; };
 		63DF90341AB04FEB0034C63D /* UINavigationBar+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90331AB04FEB0034C63D /* UINavigationBar+PDMRender.m */; };
+		63DF90371AB12AC30034C63D /* UIProgressView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		63DF90301AB049770034C63D /* UIToolbar+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+PDMRender.m"; sourceTree = "<group>"; };
 		63DF90321AB04FEB0034C63D /* UINavigationBar+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+PDMRender.h"; sourceTree = "<group>"; };
 		63DF90331AB04FEB0034C63D /* UINavigationBar+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+PDMRender.m"; sourceTree = "<group>"; };
+		63DF90351AB12AC30034C63D /* UIProgressView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+PDMRender.h"; sourceTree = "<group>"; };
+		63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+PDMRender.m"; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -270,6 +273,8 @@
 				63DF90301AB049770034C63D /* UIToolbar+PDMRender.m */,
 				63DF90321AB04FEB0034C63D /* UINavigationBar+PDMRender.h */,
 				63DF90331AB04FEB0034C63D /* UINavigationBar+PDMRender.m */,
+				63DF90351AB12AC30034C63D /* UIProgressView+PDMRender.h */,
+				63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				631547691AAD47A8000CC523 /* AppDelegate.m in Sources */,
 				631547661AAD47A8000CC523 /* main.m in Sources */,
 				63DF90311AB049770034C63D /* UIToolbar+PDMRender.m in Sources */,
+				63DF90371AB12AC30034C63D /* UIProgressView+PDMRender.m in Sources */,
 				631547931AAD4FCD000CC523 /* PDMCore.m in Sources */,
 				63DF90281AB01BD10034C63D /* TableViewController.m in Sources */,
 				63DF902E1AB034170034C63D /* UIPageControl+PDMRender.m in Sources */,

@@ -145,12 +145,21 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AYl-O5-Zex">
+                                <rect key="frame" x="85" y="344" width="150" height="2"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="G1v-Q6-COQ"/>
+                                </constraints>
+                                <color key="trackTintColor" white="0.0" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="NOR-Qf-HxG" secondAttribute="bottom" constant="8" id="15n-dD-crU"/>
                             <constraint firstItem="AUQ-3I-m3M" firstAttribute="top" secondItem="gGc-Ss-IVN" secondAttribute="bottom" constant="8" id="183-p4-gGY"/>
                             <constraint firstAttribute="centerX" secondItem="fAj-TB-m3J" secondAttribute="centerX" id="5FI-tH-XFU"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="AYl-O5-Zex" secondAttribute="centerX" id="6C2-lg-wmh"/>
                             <constraint firstAttribute="trailing" secondItem="vgv-89-95q" secondAttribute="trailing" id="8o5-aV-aF3"/>
                             <constraint firstItem="hkQ-al-ddD" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="8sQ-5r-L1B"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fAj-TB-m3J" secondAttribute="bottom" constant="48" id="PXA-au-8Rh"/>
@@ -164,6 +173,7 @@
                             <constraint firstItem="AUQ-3I-m3M" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="dDt-6z-gxI"/>
                             <constraint firstItem="xZk-mP-0N7" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="0.5" id="e6w-wo-ki4"/>
                             <constraint firstItem="ATs-ip-nia" firstAttribute="top" secondItem="5iR-pC-G5o" secondAttribute="bottom" constant="12" id="ffA-cj-1ON"/>
+                            <constraint firstItem="AYl-O5-Zex" firstAttribute="top" secondItem="xZk-mP-0N7" secondAttribute="bottom" constant="8" id="h5X-7c-bVt"/>
                             <constraint firstItem="9mE-fD-rkc" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" constant="47" id="kC2-k6-4FB"/>
                             <constraint firstItem="gGc-Ss-IVN" firstAttribute="top" secondItem="QGE-kY-nfm" secondAttribute="bottom" constant="8" id="keg-dJ-l0I"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="66" id="mbm-0e-NJA"/>
