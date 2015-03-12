@@ -28,7 +28,7 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    if (self.pdm_restoreData[@"originalImageName"]) {
+    if (self.pdm_restoreData[@"originalImageName"] != nil) {
         self.image = [UIImage imageNamed:self.pdm_restoreData[@"originalImageName"]];
     }
 }

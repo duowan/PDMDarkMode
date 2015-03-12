@@ -7,6 +7,13 @@
 //
 
 #import "PDMColorItem.h"
+#import "PDMColor.h"
+
+@interface PDMColorItem ()
+
+@property (nonatomic, strong) PDMColor *myReplacingColor;
+
+@end
 
 @implementation PDMColorItem
 
@@ -37,10 +44,14 @@
     self = [super init];
     if (self) {
         self.originalColor = [self colorWithColorString:originalColorString];
-        self.replacingColor = [self colorWithColorString:replacingColorString];
+        self.myReplacingColor = [[PDMColor alloc] initWithColor:[self colorWithColorString:replacingColorString]];
         self.originalColorHash = [PDMColorItem colorHash:self.originalColor];
     }
     return self;
+}
+
+- (UIColor *)replacingColor {
+    return [self.myReplacingColor color];
 }
 
 - (UIColor *)colorWithColorString:(NSString *)colorString {

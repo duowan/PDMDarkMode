@@ -37,10 +37,10 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    if (self.pdm_restoreData[@"onTintColor"]) {
-        self.thumbTintColor = self.pdm_restoreData[@"onTintColor"];
+    if (self.pdm_restoreData[@"onTintColor"] != nil) {
+        self.onTintColor = self.pdm_restoreData[@"onTintColor"];
     }
-    if (self.pdm_restoreData[@"thumbTintColor"]) {
+    if (self.pdm_restoreData[@"thumbTintColor"] != nil) {
         self.thumbTintColor = self.pdm_restoreData[@"thumbTintColor"];
     }
 }

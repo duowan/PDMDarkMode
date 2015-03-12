@@ -28,7 +28,7 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    if (self.pdm_restoreData[@"barTintColor"]) {
+    if (self.pdm_restoreData[@"barTintColor"] != nil) {
         self.barTintColor = self.pdm_restoreData[@"barTintColor"];
     }
 }

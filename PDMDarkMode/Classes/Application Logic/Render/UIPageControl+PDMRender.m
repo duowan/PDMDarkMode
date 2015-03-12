@@ -37,10 +37,10 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    if (self.pdm_restoreData[@"pageIndicatorTintColor"]) {
+    if (self.pdm_restoreData[@"pageIndicatorTintColor"] != nil) {
         self.pageIndicatorTintColor = self.pdm_restoreData[@"pageIndicatorTintColor"];
     }
-    if (self.pdm_restoreData[@"currentPageIndicatorTintColor"]) {
+    if (self.pdm_restoreData[@"currentPageIndicatorTintColor"] != nil) {
         self.currentPageIndicatorTintColor = self.pdm_restoreData[@"currentPageIndicatorTintColor"];
     }
 }

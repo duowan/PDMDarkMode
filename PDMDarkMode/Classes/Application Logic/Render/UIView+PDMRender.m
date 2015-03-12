@@ -8,6 +8,7 @@
 
 #import "UIView+PDMRender.h"
 #import <objc/runtime.h>
+#import "PDMColor.h"
 
 @implementation UIView (PDMRender)
 
@@ -73,19 +74,22 @@
 
 #pragma mark - pdm_restoreData
 
-- (NSDictionary *)pdm_restoreData {
-    return (NSDictionary *)objc_getAssociatedObject(self, "pdm_restoreData");
+- (PDMDictionary *)pdm_restoreData {
+    return (PDMDictionary *)objc_getAssociatedObject(self, "pdm_restoreData");
 }
 
-- (void)setPdm_restoreData:(NSDictionary *)pdm_restoreData {
-    objc_setAssociatedObject(self, "pdm_restoreData", pdm_restoreData, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setPdm_restoreData:(PDMDictionary *)pdm_restoreData {
+    objc_setAssociatedObject(self, "pdm_restoreData", pdm_restoreData, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setObject:(id)object forRestoreKey:(NSString *)restoreKey {
+    if ([object isKindOfClass:[UIColor class]]) {
+        object = [[PDMColor alloc] initWithColor:object];
+    }
     if (object != nil && restoreKey != nil) {
         NSMutableDictionary *mutableDictionary = self.pdm_restoreData == nil ? [@{} mutableCopy] : [self.pdm_restoreData mutableCopy];
         [mutableDictionary setObject:object forKey:restoreKey];
-        self.pdm_restoreData = mutableDictionary;
+        self.pdm_restoreData = [[PDMDictionary alloc] initWithDictionary:[mutableDictionary copy]];
     }
 }
 

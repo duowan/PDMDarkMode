@@ -38,6 +38,8 @@
 		63DF90401AB13AD30034C63D /* blackFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903E1AB13AD30034C63D /* blackFace@2x.png */; };
 		63DF90411AB13AD30034C63D /* whiteFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903F1AB13AD30034C63D /* whiteFace@2x.png */; };
 		63DF90441AB13C2A0034C63D /* UIImageView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */; };
+		63DF904D1AB1675F0034C63D /* PDMColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF904C1AB1675F0034C63D /* PDMColor.m */; };
+		63DF90501AB167760034C63D /* PDMDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF904F1AB167760034C63D /* PDMDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,10 @@
 		63DF903F1AB13AD30034C63D /* whiteFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteFace@2x.png"; sourceTree = "<group>"; };
 		63DF90421AB13C2A0034C63D /* UIImageView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PDMRender.h"; sourceTree = "<group>"; };
 		63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PDMRender.m"; sourceTree = "<group>"; };
+		63DF904B1AB1675F0034C63D /* PDMColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMColor.h; sourceTree = "<group>"; };
+		63DF904C1AB1675F0034C63D /* PDMColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMColor.m; sourceTree = "<group>"; };
+		63DF904E1AB167760034C63D /* PDMDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMDictionary.h; sourceTree = "<group>"; };
+		63DF904F1AB167760034C63D /* PDMDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMDictionary.m; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -218,6 +224,7 @@
 		6315478A1AAD4F5C000CC523 /* Application Logic */ = {
 			isa = PBXGroup;
 			children = (
+				63DF904A1AB1675F0034C63D /* Custom Classes */,
 				6315479D1AAD7B4A000CC523 /* Render */,
 				6315478B1AAD4F5C000CC523 /* Core */,
 				6315478C1AAD4F5C000CC523 /* Entity */,
@@ -298,6 +305,17 @@
 				63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */,
 			);
 			path = Render;
+			sourceTree = "<group>";
+		};
+		63DF904A1AB1675F0034C63D /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				63DF904B1AB1675F0034C63D /* PDMColor.h */,
+				63DF904C1AB1675F0034C63D /* PDMColor.m */,
+				63DF904E1AB167760034C63D /* PDMDictionary.h */,
+				63DF904F1AB167760034C63D /* PDMDictionary.m */,
+			);
+			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		A4F1D4FDE5271E782D9E89F1 /* Frameworks */ = {
@@ -456,10 +474,12 @@
 				63DF903D1AB130F00034C63D /* PDMImageItem.m in Sources */,
 				63DF90341AB04FEB0034C63D /* UINavigationBar+PDMRender.m in Sources */,
 				63DF902B1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m in Sources */,
+				63DF90501AB167760034C63D /* PDMDictionary.m in Sources */,
 				63DF901F1AB00F230034C63D /* UITextView+PDMRender.m in Sources */,
 				631547A61AAEC974000CC523 /* UIView+PDMRender.m in Sources */,
 				631547961AAD50AE000CC523 /* PDMSkinManager.m in Sources */,
 				631547991AAD52D5000CC523 /* PDMSkinItem.m in Sources */,
+				63DF904D1AB1675F0034C63D /* PDMColor.m in Sources */,
 				631547A31AAD89F2000CC523 /* PDMColorItem.m in Sources */,
 				631547691AAD47A8000CC523 /* AppDelegate.m in Sources */,
 				631547661AAD47A8000CC523 /* main.m in Sources */,

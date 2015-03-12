@@ -37,10 +37,10 @@
 
 - (void)pdm_restore {
     [super pdm_restore];
-    if (self.pdm_restoreData[@"progressTintColor"]) {
-        self.trackTintColor = self.pdm_restoreData[@"progressTintColor"];
+    if (self.pdm_restoreData[@"progressTintColor"] != nil) {
+        self.progressTintColor = self.pdm_restoreData[@"progressTintColor"];
     }
-    if (self.pdm_restoreData[@"trackTintColor"]) {
+    if (self.pdm_restoreData[@"trackTintColor"] != nil) {
         self.trackTintColor = self.pdm_restoreData[@"trackTintColor"];
     }
 }

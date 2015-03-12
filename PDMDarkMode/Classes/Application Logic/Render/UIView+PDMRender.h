@@ -10,12 +10,13 @@
 #import "PDMSkinItem.h"
 #import "PDMColorItem.h"
 #import "PDMImageItem.h"
+#import "PDMDictionary.h"
 
 @interface UIView (PDMRender)
 
 @property (nonatomic, copy) NSSet *pdm_skinItems;
 
-@property (nonatomic, copy) NSDictionary *pdm_restoreData;
+@property (nonatomic, copy) PDMDictionary *pdm_restoreData;
 
 - (BOOL)pdm_rendWithSkinItem:(PDMSkinItem *)skinItem;
 
