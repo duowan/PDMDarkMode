@@ -109,10 +109,10 @@ static BOOL isOn;
 
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
-        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self.navigationController];
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
     }
     else {
-        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self.navigationController];
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
     }
     isOn = !isOn;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];

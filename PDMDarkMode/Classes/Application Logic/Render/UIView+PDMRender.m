@@ -56,9 +56,9 @@
     return YES;
 }
 
-- (void)pdm_restore {
+- (BOOL)pdm_restore {
     if (self.pdm_skinItems == nil) {
-        return;
+        return NO;
     }
     else {
         self.pdm_skinItems = nil;
@@ -69,7 +69,8 @@
     if (self.pdm_restoreData[@"tintColor"] != nil) {
         self.tintColor = self.pdm_restoreData[@"tintColor"];
     }
-    [self performSelector:@selector(setPdm_restoreData:) withObject:nil afterDelay:0.001];
+//    [self performSelector:@selector(setPdm_restoreData:) withObject:nil afterDelay:0.001];
+    return YES;
 }
 
 #pragma mark - pdm_restoreData

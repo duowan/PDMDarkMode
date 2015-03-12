@@ -89,10 +89,10 @@
 }
 
 - (void)restoreWithView:(UIView *)view isRecursive:(BOOL)isRecursive {
-    [self.render restoreWithView:view];
-    if (isRecursive) {
+    BOOL isSucceed = [self.render restoreWithView:view];
+    if (isRecursive && isSucceed) {
         [[view subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self restoreWithView:obj isRecursive:isRecursive];
+            [self restoreWithView:view isRecursive:YES];
         }];
     }
 }

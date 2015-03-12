@@ -22,7 +22,7 @@
 
 - (void)pdm_configureReactiveCocoa;
 
-- (void)pdm_restore;
+- (BOOL)pdm_restore;
 
 - (void)setObject:(id)object forRestoreKey:(NSString *)restoreKey;
 
