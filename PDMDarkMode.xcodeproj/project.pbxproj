@@ -34,6 +34,9 @@
 		63DF90341AB04FEB0034C63D /* UINavigationBar+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90331AB04FEB0034C63D /* UINavigationBar+PDMRender.m */; };
 		63DF90371AB12AC30034C63D /* UIProgressView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */; };
 		63DF903A1AB12C5A0034C63D /* UISwitch+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90391AB12C5A0034C63D /* UISwitch+PDMRender.m */; };
+		63DF903D1AB130F00034C63D /* PDMImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF903C1AB130F00034C63D /* PDMImageItem.m */; };
+		63DF90401AB13AD30034C63D /* blackFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903E1AB13AD30034C63D /* blackFace@2x.png */; };
+		63DF90411AB13AD30034C63D /* whiteFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903F1AB13AD30034C63D /* whiteFace@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,10 @@
 		63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+PDMRender.m"; sourceTree = "<group>"; };
 		63DF90381AB12C5A0034C63D /* UISwitch+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISwitch+PDMRender.h"; sourceTree = "<group>"; };
 		63DF90391AB12C5A0034C63D /* UISwitch+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISwitch+PDMRender.m"; sourceTree = "<group>"; };
+		63DF903B1AB130F00034C63D /* PDMImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDMImageItem.h; sourceTree = "<group>"; };
+		63DF903C1AB130F00034C63D /* PDMImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMImageItem.m; sourceTree = "<group>"; };
+		63DF903E1AB13AD30034C63D /* blackFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackFace@2x.png"; sourceTree = "<group>"; };
+		63DF903F1AB13AD30034C63D /* whiteFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteFace@2x.png"; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -232,6 +239,8 @@
 				631547981AAD52D5000CC523 /* PDMSkinItem.m */,
 				631547A11AAD89F2000CC523 /* PDMColorItem.h */,
 				631547A21AAD89F2000CC523 /* PDMColorItem.m */,
+				63DF903B1AB130F00034C63D /* PDMImageItem.h */,
+				63DF903C1AB130F00034C63D /* PDMImageItem.m */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 		6315479A1AAD757F000CC523 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63DF903E1AB13AD30034C63D /* blackFace@2x.png */,
+				63DF903F1AB13AD30034C63D /* whiteFace@2x.png */,
 				6315479B1AAD758D000CC523 /* Demo.plist */,
 			);
 			path = Resources;
@@ -376,8 +387,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6315476F1AAD47A9000CC523 /* Main.storyboard in Resources */,
+				63DF90411AB13AD30034C63D /* whiteFace@2x.png in Resources */,
 				6315479C1AAD758D000CC523 /* Demo.plist in Resources */,
 				631547741AAD47A9000CC523 /* LaunchScreen.xib in Resources */,
+				63DF90401AB13AD30034C63D /* blackFace@2x.png in Resources */,
 				631547711AAD47A9000CC523 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +448,7 @@
 				631547901AAD4F78000CC523 /* PDMApplication.m in Sources */,
 				63DF90251AB0144F0034C63D /* UITextField+PDMRender.m in Sources */,
 				6315476C1AAD47A8000CC523 /* ViewController.m in Sources */,
+				63DF903D1AB130F00034C63D /* PDMImageItem.m in Sources */,
 				63DF90341AB04FEB0034C63D /* UINavigationBar+PDMRender.m in Sources */,
 				63DF902B1AB026780034C63D /* UIActivityIndicatorView+PDMRender.m in Sources */,
 				63DF901F1AB00F230034C63D /* UITextView+PDMRender.m in Sources */,

@@ -45,6 +45,12 @@
  */
 @property (nonatomic, copy) NSOrderedSet *colorItems;
 
+/**
+ *  @brief 图片对象
+ *  NSDictionary -> Key:PDMImageItem.originalImageHash => Value:PDMImageItem
+ */
+@property (nonatomic, copy) NSDictionary *imageItems;
+
 - (void)loadStyleSheetFromPlist:(NSString *)filePath;
 
 - (void)colorItemWithOriginColor:(UIColor *)originColor

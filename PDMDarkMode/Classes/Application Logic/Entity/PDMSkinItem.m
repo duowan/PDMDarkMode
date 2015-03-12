@@ -8,6 +8,7 @@
 
 #import "PDMSkinItem.h"
 #import "PDMColorItem.h"
+#import "PDMImageItem.h"
 
 @interface PDMSkinItem ()
 
@@ -25,12 +26,16 @@
 - (void)setStyleSheet:(NSDictionary *)styleSheet {
     _styleSheet = styleSheet;
     [self findColorItems];
+    [self findImageItems];
 }
 
 - (void)findColorItems {
     NSMutableArray *items = [NSMutableArray array];
     NSMutableDictionary *itemsDictionary = [NSMutableDictionary dictionary];
     [self.styleSheet enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([key hasPrefix:@"img:"]) {
+            return ;
+        }
         PDMColorItem *item = [[PDMColorItem alloc] initWithOriginalColorString:key replacingColorString:obj];
         [items addObject:item];
         [itemsDictionary setObject:item forKey:@(item.originalColorHash)];
@@ -99,6 +104,17 @@
             }
         }
     });
+}
+
+- (void)findImageItems {
+    NSMutableDictionary *itemsDictionary = [NSMutableDictionary dictionary];
+    [self.styleSheet enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([key hasPrefix:@"img:"]) {
+            PDMImageItem *item = [[PDMImageItem alloc] initWithOriginalImageName:key replacingImageName:obj];
+            [itemsDictionary setObject:item forKey:@(item.originalImageHash)];
+        }
+    }];
+    self.imageItems = itemsDictionary;
 }
 
 @end

@@ -12,5 +12,7 @@
 	<string>0,0,0[纯黑色]</string>
 	<key>191,191,191,1.0,5[工具栏灰]</key>
 	<string>153,102,51[棕色]</string>
+	<key>img:blackFace[小黑猫]</key>
+	<string>whiteFace[小白猫]</string>
 </dict>
 </plist>
