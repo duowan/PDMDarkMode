@@ -27,7 +27,9 @@
 }
 
 - (void)pdm_restore {
-    [super pdm_restore];
+    if (![super pdm_restore]) {
+        return;
+    }
     if (self.pdm_restoreData[@"textColor"] != nil) {
         self.textColor = self.pdm_restoreData[@"textColor"];
     }

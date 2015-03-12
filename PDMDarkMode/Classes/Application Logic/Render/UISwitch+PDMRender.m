@@ -36,7 +36,9 @@
 }
 
 - (void)pdm_restore {
-    [super pdm_restore];
+    if (![super pdm_restore]) {
+        return;
+    }
     if (self.pdm_restoreData[@"onTintColor"] != nil) {
         self.onTintColor = self.pdm_restoreData[@"onTintColor"];
     }

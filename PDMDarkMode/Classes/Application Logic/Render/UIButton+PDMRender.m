@@ -39,7 +39,9 @@ static NSArray *stateArray;
 }
 
 - (void)pdm_restore {
-    [super pdm_restore];
+    if (![super pdm_restore]) {
+        return;
+    }
     if (self.buttonType == UIButtonTypeCustom) {
         [stateArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             UIColor *stateColor = self.pdm_restoreData[[NSString stringWithFormat:@"buttonTitleColorForState%@", obj]];

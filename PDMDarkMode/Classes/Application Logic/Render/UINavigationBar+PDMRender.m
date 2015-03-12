@@ -48,7 +48,9 @@
 }
 
 - (void)pdm_restore {
-    [super pdm_restore];
+    if (![super pdm_restore]) {
+        return;
+    }
     if (self.pdm_restoreData[@"barTintColor"] != nil) {
         self.barTintColor = self.pdm_restoreData[@"barTintColor"];
         [self pdm_changeStatusBarStyle];
