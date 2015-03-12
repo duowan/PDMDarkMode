@@ -5,7 +5,7 @@ PDMDarkMode
 
 ![DemoVideo](https://raw.githubusercontent.com/duowan/PDMDarkMode/master/DemoVideo/DemoVideo.gif)
 
-Usage
+Install
 ===
 * CocoaPods : pod "PDMDarkMode"
 * SourceCode: Copy All Classes File into project.
