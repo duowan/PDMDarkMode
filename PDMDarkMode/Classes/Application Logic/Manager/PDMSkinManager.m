@@ -92,7 +92,7 @@
     BOOL isSucceed = [self.render restoreWithView:view];
     if (isRecursive && isSucceed) {
         [[view subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self restoreWithView:view isRecursive:YES];
+            [self restoreWithView:obj isRecursive:YES];
         }];
     }
 }
