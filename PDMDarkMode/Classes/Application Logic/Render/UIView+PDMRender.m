@@ -57,7 +57,7 @@
 }
 
 - (BOOL)pdm_restore {
-    if (self.pdm_skinItems == nil || [self.pdm_restoreData count] == 0) {
+    if (self.pdm_skinItems == nil) {
         return NO;
     }
     else {
@@ -69,7 +69,6 @@
     if (self.pdm_restoreData[@"tintColor"] != nil) {
         self.tintColor = self.pdm_restoreData[@"tintColor"];
     }
-//    [self performSelector:@selector(setPdm_restoreData:) withObject:nil afterDelay:0.001];
     return YES;
 }
 

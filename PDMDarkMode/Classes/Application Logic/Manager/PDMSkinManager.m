@@ -9,7 +9,7 @@
 #import "PDMSkinManager.h"
 #import "PDMRender.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-static NSMutableArray *myArray;
+
 @interface PDMSkinManager ()
 
 @property (nonatomic, copy) NSSet *items;
@@ -85,18 +85,12 @@ static NSMutableArray *myArray;
 }
 
 - (void)restoreWithViewController:(UIViewController *)viewController {
-    myArray = [NSMutableArray array];
     [self restoreWithView:viewController.view isRecursive:YES];
 }
 
 - (void)restoreWithView:(UIView *)view isRecursive:(BOOL)isRecursive {
-    NSAssert(![myArray containsObject:view], @"Fail");
-    [myArray addObject:view];
     BOOL isSucceed = [self.render restoreWithView:view];
     if (isRecursive && isSucceed) {
-//        for (UIView *subview in [view subviews]) {
-//            [self restoreWithView:subview isRecursive:YES];
-//        }
         [[view subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [self restoreWithView:obj isRecursive:NO];
         }];
