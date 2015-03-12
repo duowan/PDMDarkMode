@@ -40,7 +40,7 @@
             }];
         }
     }
-    {
+    if ([self respondsToSelector:@selector(tintColor)]) {
         //tintColor
         if (self.tintColor != nil) {
             UIColor *tintColor = self.tintColor;

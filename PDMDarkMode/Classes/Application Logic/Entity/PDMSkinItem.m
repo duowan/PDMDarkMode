@@ -54,7 +54,7 @@
 }
 
 - (void)colorItemWithOriginColor:(UIColor *)originColor withCompletionBlock:(void (^)(PDMColorItem *))completionBlock {
-    if (originColor == nil || completionBlock == nil) {
+    if (originColor == nil || completionBlock == nil || ![originColor isKindOfClass:[UIColor class]]) {
         return;
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
@@ -135,7 +135,7 @@
 
 - (void)imageItemWithOriginImage:(UIImage *)originImage
              withCompletionBlock:(void (^)(PDMImageItem *))comletionBlock {
-    if (originImage == nil) {
+    if (originImage == nil || ![originImage isKindOfClass:[UIImage class]]) {
         return;
     }
     NSUInteger originImageHash = [UIImagePNGRepresentation(originImage) hash];
