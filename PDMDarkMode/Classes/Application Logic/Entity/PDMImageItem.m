@@ -13,7 +13,7 @@
 
 + (NSUInteger)imageHashWithImageName:(NSString *)imageName {
     UIImage *image = [UIImage imageNamed:imageName];
-    return [image hash];
+    return [UIImagePNGRepresentation(image) hash];
 }
 
 - (instancetype)initWithOriginalImageName:(NSString *)originalImageName

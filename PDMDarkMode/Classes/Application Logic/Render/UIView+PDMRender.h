@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PDMSkinItem.h"
 #import "PDMColorItem.h"
+#import "PDMImageItem.h"
 
 @interface UIView (PDMRender)
 

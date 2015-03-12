@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@class PDMColorItem;
+@class PDMColorItem, PDMImageItem;
 
 @interface PDMSkinItem : NSObject
 
@@ -55,5 +55,8 @@
 
 - (void)colorItemWithOriginColor:(UIColor *)originColor
              withCompletionBlock:(void (^)(PDMColorItem *foundItem))completionBlock;
+
+- (void)imageItemWithOriginImage:(UIImage *)originImage
+             withCompletionBlock:(void (^)(PDMImageItem *foundItem))comletionBlock;
 
 @end

@@ -37,6 +37,7 @@
 		63DF903D1AB130F00034C63D /* PDMImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF903C1AB130F00034C63D /* PDMImageItem.m */; };
 		63DF90401AB13AD30034C63D /* blackFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903E1AB13AD30034C63D /* blackFace@2x.png */; };
 		63DF90411AB13AD30034C63D /* whiteFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63DF903F1AB13AD30034C63D /* whiteFace@2x.png */; };
+		63DF90441AB13C2A0034C63D /* UIImageView+PDMRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		63DF903C1AB130F00034C63D /* PDMImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDMImageItem.m; sourceTree = "<group>"; };
 		63DF903E1AB13AD30034C63D /* blackFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackFace@2x.png"; sourceTree = "<group>"; };
 		63DF903F1AB13AD30034C63D /* whiteFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteFace@2x.png"; sourceTree = "<group>"; };
+		63DF90421AB13C2A0034C63D /* UIImageView+PDMRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+PDMRender.h"; sourceTree = "<group>"; };
+		63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+PDMRender.m"; sourceTree = "<group>"; };
 		7A699DCEF757F67895587BE9 /* Pods-PDMDarkMode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PDMDarkMode.release.xcconfig"; path = "Pods/Target Support Files/Pods-PDMDarkMode/Pods-PDMDarkMode.release.xcconfig"; sourceTree = "<group>"; };
 		8124EB90C776CB3432205151 /* libPods-PDMDarkMode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PDMDarkMode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -291,6 +294,8 @@
 				63DF90361AB12AC30034C63D /* UIProgressView+PDMRender.m */,
 				63DF90381AB12C5A0034C63D /* UISwitch+PDMRender.h */,
 				63DF90391AB12C5A0034C63D /* UISwitch+PDMRender.m */,
+				63DF90421AB13C2A0034C63D /* UIImageView+PDMRender.h */,
+				63DF90431AB13C2A0034C63D /* UIImageView+PDMRender.m */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				63DF90371AB12AC30034C63D /* UIProgressView+PDMRender.m in Sources */,
 				631547931AAD4FCD000CC523 /* PDMCore.m in Sources */,
 				63DF90281AB01BD10034C63D /* TableViewController.m in Sources */,
+				63DF90441AB13C2A0034C63D /* UIImageView+PDMRender.m in Sources */,
 				63DF902E1AB034170034C63D /* UIPageControl+PDMRender.m in Sources */,
 				631547A01AAD7B60000CC523 /* PDMRender.m in Sources */,
 			);

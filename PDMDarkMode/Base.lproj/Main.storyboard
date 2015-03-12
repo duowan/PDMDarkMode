@@ -158,6 +158,13 @@
                                 <color key="onTintColor" white="0.0" alpha="0.45000000000000001" colorSpace="calibratedWhite"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </switch>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackFace.png" translatesAutoresizingMaskIntoConstraints="NO" id="sKi-tc-p1S">
+                                <rect key="frame" x="128" y="391" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="L6e-KJ-0QZ"/>
+                                    <constraint firstAttribute="width" constant="64" id="f6N-M4-MJl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843137254903" green="0.99607843137254903" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -167,6 +174,7 @@
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="AYl-O5-Zex" secondAttribute="centerX" id="6C2-lg-wmh"/>
                             <constraint firstAttribute="trailing" secondItem="vgv-89-95q" secondAttribute="trailing" id="8o5-aV-aF3"/>
                             <constraint firstItem="hkQ-al-ddD" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="8sQ-5r-L1B"/>
+                            <constraint firstItem="sKi-tc-p1S" firstAttribute="top" secondItem="6WS-JQ-bBC" secondAttribute="bottom" constant="6" id="KEc-Jm-4bM"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fAj-TB-m3J" secondAttribute="bottom" constant="48" id="PXA-au-8Rh"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="NOR-Qf-HxG" secondAttribute="centerX" constant="46" id="Q5o-dh-O9f"/>
                             <constraint firstItem="vgv-89-95q" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="T3T-S6-e6Y"/>
@@ -184,6 +192,7 @@
                             <constraint firstItem="gGc-Ss-IVN" firstAttribute="top" secondItem="QGE-kY-nfm" secondAttribute="bottom" constant="8" id="keg-dJ-l0I"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="66" id="mbm-0e-NJA"/>
                             <constraint firstItem="fAj-TB-m3J" firstAttribute="top" secondItem="hkQ-al-ddD" secondAttribute="bottom" constant="-3" id="nwQ-Sx-die"/>
+                            <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="sKi-tc-p1S" secondAttribute="centerX" id="sHd-3O-rJY"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="gGc-Ss-IVN" secondAttribute="centerX" constant="-0.5" id="v2Z-Lw-H9n"/>
                             <constraint firstItem="QGE-kY-nfm" firstAttribute="centerX" secondItem="5iR-pC-G5o" secondAttribute="centerX" id="wLX-zO-6Oe"/>
                             <constraint firstItem="5iR-pC-G5o" firstAttribute="centerX" secondItem="6WS-JQ-bBC" secondAttribute="centerX" constant="-0.5" id="xK4-pJ-TSF"/>
@@ -263,6 +272,9 @@
             <point key="canvasLocation" x="775" y="451"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blackFace.png" width="128" height="128"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

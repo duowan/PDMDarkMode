@@ -117,4 +117,16 @@
     self.imageItems = itemsDictionary;
 }
 
+- (void)imageItemWithOriginImage:(UIImage *)originImage
+             withCompletionBlock:(void (^)(PDMImageItem *))comletionBlock {
+    if (originImage == nil) {
+        return;
+    }
+    NSUInteger originImageHash = [UIImagePNGRepresentation(originImage) hash];
+    if (self.imageItems[@(originImageHash)] != nil) {
+        PDMImageItem *imageItem = self.imageItems[@(originImageHash)];
+        comletionBlock(imageItem);
+    }
+}
+
 @end
