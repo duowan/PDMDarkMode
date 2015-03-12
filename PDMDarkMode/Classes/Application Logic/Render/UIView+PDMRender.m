@@ -57,7 +57,7 @@
 }
 
 - (BOOL)pdm_restore {
-    if (self.pdm_skinItems == nil) {
+    if (self.pdm_skinItems == nil || [self.pdm_restoreData count] == 0) {
         return NO;
     }
     else {

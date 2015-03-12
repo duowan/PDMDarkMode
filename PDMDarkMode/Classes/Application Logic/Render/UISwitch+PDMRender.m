@@ -23,7 +23,8 @@
             }
         }];
     }
-    {
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7) {
+        //WTF, iOS6 Crashed~~~~
         UIColor *thumbTintColor = self.thumbTintColor;
         [skinItem colorItemWithOriginColor:thumbTintColor withCompletionBlock:^(PDMColorItem *foundItem) {
             if (foundItem != nil) {

@@ -115,7 +115,7 @@ static BOOL isOn;
         [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
     }
     isOn = !isOn;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];
 }
 
 @end

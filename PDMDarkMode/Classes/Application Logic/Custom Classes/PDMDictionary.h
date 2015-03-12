@@ -16,4 +16,6 @@
 
 - (id)objectForKeyedSubscript:(id)key;
 
+- (NSUInteger)count;
+
 @end
