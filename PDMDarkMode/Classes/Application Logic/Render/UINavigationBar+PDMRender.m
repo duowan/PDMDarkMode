@@ -20,6 +20,7 @@
             if (foundItem != nil) {
                 self.barTintColor = foundItem.replacingColor;
                 [self setObject:barTintColor forRestoreKey:@"barTintColor"];
+                [self pdm_changeStatusBarStyle];
             }
         }];
     }
@@ -35,10 +36,22 @@
     return YES;
 }
 
+- (void)pdm_changeStatusBarStyle {
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7) {
+        if ([[UIApplication sharedApplication] statusBarStyle] == UIStatusBarStyleDefault) {
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+        }
+        else {
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+        }
+    }
+}
+
 - (void)pdm_restore {
     [super pdm_restore];
     if (self.pdm_restoreData[@"barTintColor"] != nil) {
         self.barTintColor = self.pdm_restoreData[@"barTintColor"];
+        [self pdm_changeStatusBarStyle];
     }
     if (self.pdm_restoreData[@"barTitleColor"] != nil) {
         [self setTitleTextAttributes:@{NSForegroundColorAttributeName: self.pdm_restoreData[@"barTitleColor"]}];
