@@ -25,6 +25,8 @@ static BOOL isOn;
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
+@property (weak, nonatomic) IBOutlet UISwitch *mySwitcher;
+
 @end
 
 @implementation ViewController
@@ -37,6 +39,11 @@ static BOOL isOn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7) {
+        //I Hate iOS6, iOS6 Must Die.
+        self.mySwitcher.thumbTintColor = [UIColor whiteColor];
+        self.mySwitcher.onTintColor = [UIColor blackColor];
+    }
     if (isOn) {
         [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
     }
@@ -109,13 +116,13 @@ static BOOL isOn;
 
 - (IBAction)handleSwitchButtonTapped:(id)sender {
     if (!isOn) {
-        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self];
+        [[[PDMApplication sharedApplication] defaultManager] applyWithViewController:self.navigationController];
     }
     else {
-        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self];
+        [[[PDMApplication sharedApplication] defaultManager] restoreWithViewController:self.navigationController];
     }
     isOn = !isOn;
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PDMSwitchedNotification" object:nil];
 }
 
 @end
