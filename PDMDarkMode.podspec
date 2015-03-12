@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/duowan/PDMDarkMode.git", :tag => "0.0.1" }
 
-  s.source_files  = "PDMDarkMode/Classes","PDMDarkMode/Classes/**",,"PDMDarkMode/Classes/**/**",,"PDMDarkMode/Classes/**/**/**"
+  s.source_files  = "PDMDarkMode/Classes","PDMDarkMode/Classes/**","PDMDarkMode/Classes/**/**",,"PDMDarkMode/Classes/**/**/**"
   s.requires_arc = true
 
   s.dependency "ReactiveCocoa", "~> 2.4.7"
