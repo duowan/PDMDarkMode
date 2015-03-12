@@ -24,14 +24,21 @@
         self.pdm_skinItems = skinItems;
     }
     {
-        //backgroundColor
+        //backgroundColor High Priority
         UIColor *backgroundColor = self.backgroundColor;
-        [skinItem colorItemWithOriginColor:backgroundColor withCompletionBlock:^(PDMColorItem *foundItem) {
-            if (foundItem != nil) {
-                self.backgroundColor = foundItem.replacingColor;
-                [self setObject:backgroundColor forRestoreKey:@"backgroundColor"];
-            }
-        }];
+        PDMColorItem *syncFoundItem = [skinItem colorItemWithOriginColor:backgroundColor];
+        if (syncFoundItem != nil) {
+            self.backgroundColor = syncFoundItem.replacingColor;
+            [self setObject:backgroundColor forRestoreKey:@"backgroundColor"];
+        }
+        else {
+            [skinItem colorItemWithOriginColor:backgroundColor withCompletionBlock:^(PDMColorItem *foundItem) {
+                if (foundItem != nil) {
+                    self.backgroundColor = foundItem.replacingColor;
+                    [self setObject:backgroundColor forRestoreKey:@"backgroundColor"];
+                }
+            }];
+        }
     }
     {
         //tintColor

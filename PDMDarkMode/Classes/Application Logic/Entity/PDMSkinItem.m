@@ -106,6 +106,22 @@
     });
 }
 
+- (PDMColorItem *)colorItemWithOriginColor:(UIColor *)originColor {
+    if (originColor == nil) {
+        return nil;
+    }
+    else {
+        NSUInteger originColorHash = [PDMColorItem colorHash:originColor];
+        if (self.colorItemsDictionary[@(originColorHash)] != nil) {
+            //只支持精确查找
+            return self.colorItemsDictionary[@(originColorHash)];
+        }
+        else {
+            return nil;
+        }
+    }
+}
+
 - (void)findImageItems {
     NSMutableDictionary *itemsDictionary = [NSMutableDictionary dictionary];
     [self.styleSheet enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

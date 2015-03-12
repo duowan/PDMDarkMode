@@ -56,6 +56,8 @@
 - (void)colorItemWithOriginColor:(UIColor *)originColor
              withCompletionBlock:(void (^)(PDMColorItem *foundItem))completionBlock;
 
+- (PDMColorItem *)colorItemWithOriginColor:(UIColor *)originColor;
+
 - (void)imageItemWithOriginImage:(UIImage *)originImage
              withCompletionBlock:(void (^)(PDMImageItem *foundItem))comletionBlock;
 
